@@ -1,8 +1,9 @@
 [
   {
-    "title": "Welcome to Sub Culture",
-    "date": "2026-09-04",
-    "image": "images/posts/placeholder-1.jpg",
-    "excerpt": "This is your first post. Replace this entry in posts.json and drop your image into images/posts/ to publish your own articles."
+    "title": "Careers",
+    "date": "2026-09-05",
+    "image": "articles-photo.jpg",
+    "link": "careers-article.html",
+    "excerpt": "A key difference between having a job and a career is that a job serves a fundamental function: a duty undertaken with the sole purpose of earning remuneration. Five steps to a long, successful career."
   }
 ]
