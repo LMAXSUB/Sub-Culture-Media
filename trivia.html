@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Trivia | Sub Culture</title>
+<meta name="description" content="Five new Sub Culture trivia questions every day — how well do you actually read the site? Come back daily to keep your streak.">
+<link rel="canonical" href="https://subxculturex.com/trivia.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sub Culture">
+<meta property="og:title" content="Daily Trivia | Sub Culture">
+<meta property="og:description" content="Five new Sub Culture trivia questions every day. How well do you actually read the site?">
+<meta property="og:url" content="https://subxculturex.com/trivia.html">
+<meta property="og:image" content="https://subxculturex.com/articles-photo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Daily Trivia | Sub Culture">
+<meta name="twitter:description" content="Five new Sub Culture trivia questions every day.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+
+<style>
+/* Scoped to this page only — trivia-specific, won't touch anything else on the site */
+.trivia-wrap{max-width:640px;margin:0 auto;}
+.trivia-card{border:1px solid rgba(0,0,0,.14);border-radius:6px;padding:1.75rem;margin-bottom:1.5rem;}
+.trivia-progress{display:flex;gap:.35rem;margin-bottom:1.25rem;}
+.trivia-progress span{flex:1;height:4px;border-radius:2px;background:rgba(0,0,0,.12);}
+.trivia-progress span.done{background:#111;}
+.trivia-progress span.wrong{background:#b3122b;}
+.trivia-q{font-family:'Anton',sans-serif;font-size:1.15rem;letter-spacing:.01em;margin:0 0 1.1rem;line-height:1.35;}
+.trivia-choices{display:grid;gap:.6rem;}
+.trivia-choice{text-align:left;padding:.75rem 1rem;border:1px solid rgba(0,0,0,.18);
+  border-radius:5px;background:none;cursor:pointer;font-family:'Work Sans',sans-serif;
+  font-size:.92rem;transition:background .15s ease,border-color .15s ease;}
+.trivia-choice:hover{background:rgba(0,0,0,.04);}
+.trivia-choice.correct{background:#e4f3e8;border-color:#2f6f4e;font-weight:600;}
+.trivia-choice.incorrect{background:#fbe7e4;border-color:#b3122b;}
+.trivia-choice[disabled]{cursor:default;}
+.trivia-source{font-size:.78rem;opacity:.55;margin-top:1rem;}
+.trivia-streak{display:flex;align-items:center;gap:.6rem;margin-bottom:1.5rem;font-size:.85rem;opacity:.8;}
+.trivia-streak .flame{font-size:1.1rem;}
+.trivia-result{text-align:center;}
+.trivia-result .score{font-family:'Anton',sans-serif;font-size:2.4rem;margin:.5rem 0;}
+.trivia-share{margin-top:1rem;}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap">
+<a class="brand-logo" href="index.html">
+<img src="logo.svg" alt="Sub Culture" class="brand-logo-img">
+</a>
+<button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+<nav>
+<ul class="main-nav" id="main-nav">
+<li><a href="index.html">Articles</a></li>
+<li><a href="photography.html">Photo &amp; Video</a></li>
+<li><a href="downloads.html">Downloads</a></li>
+<li><a href="trivia.html">Daily Trivia</a></li>
+<li><a href="index.html#live-scores">Live Scores</a></li>
+</ul>
+</nav>
+<div class="header-socials">
+<a href="https://instagram.com/subxculturex" aria-label="Instagram" target="_blank" rel="noopener">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+<rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
+</svg></a>
+<a href="https://tiktok.com/@subxculturex" aria-label="TikTok" target="_blank" rel="noopener">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 2c.3 2.4 1.8 4 4.3 4.3v3.1c-1.6.1-3-.4-4.3-1.3v6.4c0 3.6-2.9 6.5-6.5 6.5S3.5 18.1 3.5 14.5 6.4 8 10 8c.4 0 .8 0 1.2.1v3.2c-.4-.1-.8-.2-1.2-.2-1.8 0-3.2 1.4-3.2 3.2s1.4 3.2 3.2 3.2 3.3-1.4 3.3-3.2V2h3.2z"/></svg></a>
+<a href="https://youtube.com/@subxculturex" aria-label="YouTube" target="_blank" rel="noopener">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l6 3-6 3V9z" fill="currentColor" stroke="none"/></svg></a>
+</div>
+</div>
+</header>
+<main id="main">
+<section class="hero">
+<div class="wrap">
+<p class="hero-eyebrow">Daily Trivia</p>
+<h1>How closely<br>do you read?</h1>
+<p class="hero-lede">Five new questions every day, pulled straight from what we've actually published. Same five for everyone, all day — come back tomorrow for a new round.</p>
+</div>
+</section>
+<section id="trivia-section">
+<div class="wrap trivia-wrap">
+<div class="trivia-streak" id="streakBar"></div>
+<div id="triviaRoot"></div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<div class="footer-grid">
+<div><img src="logo.svg" alt="Sub Culture" class="footer-logo-img"></div>
+<div>
+<h4>Navigate</h4>
+<ul>
+<li><a href="index.html">Articles</a></li>
+<li><a href="photography.html">Photo &amp; Video</a></li>
+<li><a href="downloads.html">Downloads</a></li>
+<li><a href="trivia.html">Daily Trivia</a></li>
+<li><a href="index.html#live-scores">Live Scores</a></li>
+</ul>
+</div>
+<div>
+<h4>Follow</h4>
+<ul>
+<li><a href="https://instagram.com/subxculturex" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a></li>
+<li><a href="https://tiktok.com/@subxculturex" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 2c.3 2.4 1.8 4 4.3 4.3v3.1c-1.6.1-3-.4-4.3-1.3v6.4c0 3.6-2.9 6.5-6.5 6.5S3.5 18.1 3.5 14.5 6.4 8 10 8c.4 0 .8 0 1.2.1v3.2c-.4-.1-.8-.2-1.2-.2-1.8 0-3.2 1.4-3.2 3.2s1.4 3.2 3.2 3.2 3.3-1.4 3.3-3.2V2h3.2z"/></svg></a></li>
+<li><a href="https://youtube.com/@subxculturex" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l6 3-6 3V9z" fill="currentColor" stroke="none"/></svg></a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom"><span>© <span id="year"></span> Sub Culture. All rights reserved.</span></div>
+</div>
+</footer>
+<script src="script.js"></script>
+<script data-goatcounter="https://subculture.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script src="player.js"></script>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ============================================================
+     QUESTION BANK
+     Every question here is grounded in content actually published
+     on Sub Culture — nothing invented. Add more objects to this
+     array any time you publish new articles; the daily picker
+     handles the rest automatically.
+     Format: { q, choices: [4 options], a: index of correct one, src: "Article Title" }
+     ============================================================ */
+  var BANK = [
+    { q: "What's the name of Sideshow's 2026 album, reviewed in \u201cA Sideshow Year\u201d?", choices: ["Tigray Funk", "Ethiopian Nights", "Sideshow Sessions", "Discless"], a: 0, src: "A Sideshow Year" },
+    { q: "How many discs is Sideshow's Tigray Funk divided into?", choices: ["Two", "Three", "Four", "Six"], a: 2, src: "A Sideshow Year" },
+    { q: "How many tracks does Tigray Funk run across in total?", choices: ["18", "24", "32", "40"], a: 2, src: "A Sideshow Year" },
+    { q: "Following which rapper's orbit would lead you to discover Sideshow, per Sub Culture?", choices: ["Earl Sweatshirt", "Griselda", "ScHoolboy Q", "A$AP Rocky"], a: 0, src: "A Sideshow Year" },
+    { q: "What does Sideshow's album title pay tribute to?", choices: ["A nightclub", "The Tigray region", "His mother", "A record label"], a: 1, src: "A Sideshow Year" },
+    { q: "In \u201cThe Beautiful and Dirty Game,\u201d which type of \u201cgame\u201d is framed as the fairest ground for both people?", choices: ["Home games", "Away games", "Neutral games", "Extra time"], a: 2, src: "The Beautiful and Dirty Game" },
+    { q: "What does \u201cThe Beautiful and Dirty Game\u201d compare a relationship's trust levels to?", choices: ["A football match", "A chess game", "A courtroom", "A card game"], a: 0, src: "The Beautiful and Dirty Game" },
+    { q: "According to Sub Culture's restaurant economics piece, what's the approximate cost of opening a Nando's franchise?", choices: ["R800,000", "R2.1 million", "R6.9 million", "R12 million"], a: 2, src: "The Economics of Restaurants" },
+    { q: "What's the low-end example Sub Culture gives for opening a small café?", choices: ["R30,000", "R80,000", "R150,000", "R250,000"], a: 1, src: "The Economics of Restaurants" },
+    { q: "How many reasons does Sub Culture give for why festivals beat listening to music alone?", choices: ["Three", "Four", "Five", "Six"], a: 3, src: "Why Festivals Beat Listening Alone" },
+    { q: "Which red wine does Sub Culture crown the winner of the \u201cBattle of the Reds\u201d?", choices: ["Cabernet Sauvignon", "Merlot", "Pinotage", "Shiraz"], a: 1, src: "Cheers to the Sunny Days" },
+    { q: "How many steps does Sub Culture's \u201cCareers\u201d piece give for a long, successful career?", choices: ["Three", "Four", "Five", "Seven"], a: 2, src: "Careers" },
+    { q: "What's the title of Toby From 59th's debut album?", choices: ["Dealing With It", "I'm Dealing With Problems", "59th & Nowhere", "Problems, Etc."], a: 1, src: "Toby From 59th" },
+    { q: "Which studio shot Toby From 59th's portrait for Sub Culture?", choices: ["Lost Footage Films", "Shadow League Media", "Quicksure Studios", "Sub Culture Visuals"], a: 0, src: "Toby From 59th" },
+    { q: "How often does the Sub Culture Spotify Jam group post its listening stats?", choices: ["Daily", "Every Monday", "Monthly", "Every Friday"], a: 1, src: "Sub Culture Spotify Jam Group" },
+    { q: "\u201cSnoop: The Undisputed King\u201d is a personal essay about\u2026", choices: ["Snoop Dogg", "A childhood dog", "The uncle who raised the writer", "A local rapper"], a: 2, src: "Snoop: The Undisputed King" }
+  ];
+
+  var TODAY = new Date().toISOString().slice(0, 10);
+  var PROGRESS_KEY = "sct_trivia_" + TODAY;
+  var STREAK_KEY = "sct_trivia_streak";
+
+  function seededShuffle(arr, seedStr) {
+    var seed = 0;
+    for (var i = 0; i < seedStr.length; i++) seed = (seed * 31 + seedStr.charCodeAt(i)) >>> 0;
+    function rand() {
+      seed = (seed * 1664525 + 1013904223) >>> 0;
+      return seed / 4294967296;
+    }
+    var a = arr.slice();
+    for (var j = a.length - 1; j > 0; j--) {
+      var k = Math.floor(rand() * (j + 1));
+      var tmp = a[j]; a[j] = a[k]; a[k] = tmp;
+    }
+    return a;
+  }
+
+  function todaysQuestions() {
+    var shuffled = seededShuffle(BANK, TODAY);
+    return shuffled.slice(0, 5);
+  }
+
+  function getStreak() {
+    try { return JSON.parse(localStorage.getItem(STREAK_KEY)) || { count: 0, last: null }; }
+    catch (e) { return { count: 0, last: null }; }
+  }
+  function bumpStreak() {
+    var s = getStreak();
+    var yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+    if (s.last === TODAY) { /* already counted today */ }
+    else if (s.last === yesterday) { s.count += 1; s.last = TODAY; }
+    else { s.count = 1; s.last = TODAY; }
+    localStorage.setItem(STREAK_KEY, JSON.stringify(s));
+    return s;
+  }
+
+  function renderStreak() {
+    var s = getStreak();
+    var el = document.getElementById("streakBar");
+    if (s.count > 0) {
+      el.innerHTML = '<span class="flame">\uD83D\uDD25</span> ' + s.count + '-day streak';
+    } else {
+      el.innerHTML = 'Play today to start a streak.';
+    }
+  }
+
+  function getProgress() {
+    try { return JSON.parse(localStorage.getItem(PROGRESS_KEY)); }
+    catch (e) { return null; }
+  }
+  function saveProgress(p) {
+    localStorage.setItem(PROGRESS_KEY, JSON.stringify(p));
+  }
+
+  var root = document.getElementById("triviaRoot");
+  var questions = todaysQuestions();
+
+  function renderResult(score, answers) {
+    renderStreak();
+    var dots = questions.map(function (_, i) {
+      return '<span class="' + (answers[i] === questions[i].a ? 'done' : 'wrong') + '"></span>';
+    }).join("");
+    root.innerHTML =
+      '<div class="trivia-card trivia-result">' +
+        '<p style="text-transform:uppercase;letter-spacing:.05em;font-size:.78rem;opacity:.6;">Today\u2019s result</p>' +
+        '<div class="score">' + score + ' / ' + questions.length + '</div>' +
+        '<div class="trivia-progress">' + dots + '</div>' +
+        '<p>' + (score === questions.length ? "Perfect \u2014 you actually read the site." : score >= 3 ? "Solid. Room to improve tomorrow." : "Rough round \u2014 go read a few articles and come back tomorrow.") + '</p>' +
+        '<p class="trivia-share" style="opacity:.6;font-size:.82rem;">New round in: <span id="countdown"></span></p>' +
+      '</div>';
+    startCountdown();
+  }
+
+  function startCountdown() {
+    var el = document.getElementById("countdown");
+    if (!el) return;
+    function tick() {
+      var now = new Date();
+      var tomorrow = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1));
+      var diff = tomorrow - now;
+      var h = Math.floor(diff / 3600000), m = Math.floor((diff % 3600000) / 60000), s = Math.floor((diff % 60000) / 1000);
+      el.textContent = h + "h " + m + "m " + s + "s";
+    }
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  function renderQuestion(i, answers) {
+    renderStreak();
+    var qObj = questions[i];
+    var progressDots = questions.map(function (_, di) {
+      var cls = di < i ? (answers[di] === questions[di].a ? "done" : "wrong") : "";
+      return '<span class="' + cls + '"></span>';
+    }).join("");
+
+    root.innerHTML =
+      '<div class="trivia-card">' +
+        '<div class="trivia-progress">' + progressDots + '</div>' +
+        '<p class="trivia-q">' + qObj.q + '</p>' +
+        '<div class="trivia-choices" id="choices">' +
+          qObj.choices.map(function (c, ci) {
+            return '<button class="trivia-choice" data-i="' + ci + '">' + c + '</button>';
+          }).join("") +
+        '</div>' +
+        '<p class="trivia-source">From: ' + qObj.src + '</p>' +
+      '</div>';
+
+    var buttons = root.querySelectorAll(".trivia-choice");
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        buttons.forEach(function (b) { b.disabled = true; });
+        var chosen = Number(btn.dataset.i);
+        answers[i] = chosen;
+        buttons[qObj.a].classList.add("correct");
+        if (chosen !== qObj.a) btn.classList.add("incorrect");
+        setTimeout(function () {
+          if (i + 1 < questions.length) {
+            renderQuestion(i + 1, answers);
+          } else {
+            var score = answers.filter(function (a, ai) { return a === questions[ai].a; }).length;
+            saveProgress({ answers: answers, score: score });
+            bumpStreak();
+            renderResult(score, answers);
+          }
+        }, 900);
+      });
+    });
+  }
+
+  var existing = getProgress();
+  if (existing) {
+    renderResult(existing.score, existing.answers);
+  } else {
+    renderQuestion(0, []);
+  }
+})();
+</script>
+</body>
+</html>
