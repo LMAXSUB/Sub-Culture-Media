@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Downloads | Sub Culture</title>
+<meta name="description" content="Free wallpapers, cover art, and mixes from Sub Culture — browse, preview, and download.">
+<link rel="canonical" href="https://subxculturex.com/downloads.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sub Culture">
+<meta property="og:title" content="Downloads | Sub Culture">
+<meta property="og:description" content="Free wallpapers, cover art, and mixes from Sub Culture — browse, preview, and download.">
+<meta property="og:url" content="https://subxculturex.com/downloads.html">
+<meta property="og:image" content="https://subxculturex.com/articles-photo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Downloads | Sub Culture">
+<meta name="twitter:description" content="Free wallpapers, cover art, and mixes from Sub Culture.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+
+<style>
+/* Scoped to the Downloads page only */
+.dl-eyebrow-note{max-width:60ch;opacity:.75;margin:0 0 2rem;line-height:1.6;}
+
+.dl-featured{margin-bottom:3rem;}
+.dl-featured h2{font-family:'Anton',sans-serif;letter-spacing:.02em;font-size:1.1rem;
+  text-transform:uppercase;margin:0 0 1rem;}
+.dl-carousel{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding-bottom:.5rem;-webkit-overflow-scrolling:touch;}
+.dl-carousel::-webkit-scrollbar{height:6px;}
+.dl-carousel::-webkit-scrollbar-thumb{background:rgba(0,0,0,.2);border-radius:3px;}
+.dl-carousel .dl-card{flex:0 0 240px;scroll-snap-align:start;}
+
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;}
+
+.dl-card{border:1px solid rgba(0,0,0,.12);border-radius:6px;overflow:hidden;
+  background:#fff;display:flex;flex-direction:column;transition:box-shadow .2s ease,transform .2s ease;}
+.dl-card:hover{box-shadow:0 8px 22px rgba(0,0,0,.1);transform:translateY(-2px);}
+
+.dl-thumb{position:relative;aspect-ratio:1/1;background:#111;overflow:hidden;cursor:pointer;}
+.dl-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease;}
+.dl-card:hover .dl-thumb img{transform:scale(1.04);}
+.dl-thumb .dl-zoom-hint{position:absolute;right:.5rem;bottom:.5rem;background:rgba(0,0,0,.55);
+  color:#fff;border-radius:999px;width:26px;height:26px;display:flex;align-items:center;
+  justify-content:center;font-size:.8rem;}
+
+.dl-thumb.dl-audio{background:linear-gradient(135deg,#111 0%,#2a2a28 100%);
+  display:flex;align-items:center;justify-content:center;cursor:default;}
+.dl-audio-bars{display:flex;align-items:flex-end;gap:3px;height:34px;}
+.dl-audio-bars span{width:4px;background:rgba(244,242,238,.5);border-radius:2px;animation:dlbar 1.4s ease-in-out infinite;}
+.dl-audio-bars span:nth-child(1){height:40%;animation-delay:0s;}
+.dl-audio-bars span:nth-child(2){height:80%;animation-delay:.15s;}
+.dl-audio-bars span:nth-child(3){height:55%;animation-delay:.3s;}
+.dl-audio-bars span:nth-child(4){height:95%;animation-delay:.45s;}
+.dl-audio-bars span:nth-child(5){height:65%;animation-delay:.6s;}
+@keyframes dlbar{0%,100%{transform:scaleY(.5);}50%{transform:scaleY(1);}}
+
+.dl-body{padding:.85rem .95rem 1rem;display:flex;flex-direction:column;gap:.5rem;flex:1;}
+.dl-title{font-family:'Anton',sans-serif;letter-spacing:.01em;font-size:.92rem;line-height:1.25;margin:0;}
+.dl-desc{font-size:.8rem;opacity:.7;line-height:1.5;margin:0;flex:1;}
+.dl-actions{display:flex;gap:.5rem;margin-top:.25rem;}
+.dl-actions button, .dl-actions a{flex:1;text-align:center;font-size:.78rem;padding:.45rem .5rem;
+  border-radius:4px;border:1px solid #111;background:#111;color:#fff;cursor:pointer;
+  text-decoration:none;font-family:'Work Sans',sans-serif;}
+.dl-actions .dl-ghost{background:none;color:#111;}
+
+.dl-lightbox{position:fixed;inset:0;background:rgba(10,10,10,.92);z-index:9990;
+  display:none;align-items:center;justify-content:center;padding:2rem 1.25rem;}
+.dl-lightbox.open{display:flex;}
+.dl-lightbox-inner{max-width:720px;width:100%;}
+.dl-lightbox img{width:100%;max-height:70vh;object-fit:contain;display:block;border-radius:4px;}
+.dl-lightbox-meta{color:#f4f2ee;margin-top:1rem;display:flex;justify-content:space-between;
+  align-items:flex-end;gap:1rem;flex-wrap:wrap;}
+.dl-lightbox-meta h3{font-family:'Anton',sans-serif;margin:0 0 .3rem;font-size:1.1rem;}
+.dl-lightbox-meta p{margin:0;opacity:.7;font-size:.85rem;max-width:50ch;}
+.dl-lightbox-close{position:fixed;top:1.25rem;right:1.25rem;background:none;border:none;
+  color:#f4f2ee;font-size:2rem;line-height:1;cursor:pointer;z-index:9991;}
+.dl-lightbox-download{background:#f4f2ee;color:#111;padding:.6rem 1.1rem;border-radius:4px;
+  text-decoration:none;font-size:.85rem;white-space:nowrap;}
+
+.dl-empty{opacity:.6;font-style:italic;}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap">
+<a class="brand-logo" href="index.html">
+<img src="logo.svg" alt="Sub Culture" class="brand-logo-img">
+</a>
+<button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+<nav>
+<ul class="main-nav" id="main-nav">
+<li><a href="index.html">Articles</a></li>
+<li><a href="photography.html">Photo &amp; Video</a></li>
+<li><a href="downloads.html">Downloads</a></li>
+<li><a href="trivia.html">Daily Trivia</a></li>
+<li><a href="index.html#live-scores">Live Scores</a></li>
+</ul>
+</nav>
+<div class="header-socials">
+<a href="https://instagram.com/subxculturex" aria-label="Instagram" target="_blank" rel="noopener">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+</a>
+<a href="https://tiktok.com/@subxculturex" aria-label="TikTok" target="_blank" rel="noopener">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 2c.3 2.4 1.8 4 4.3 4.3v3.1c-1.6.1-3-.4-4.3-1.3v6.4c0 3.6-2.9 6.5-6.5 6.5S3.5 18.1 3.5 14.5 6.4 8 10 8c.4 0 .8 0 1.2.1v3.2c-.4-.1-.8-.2-1.2-.2-1.8 0-3.2 1.4-3.2 3.2s1.4 3.2 3.2 3.2 3.3-1.4 3.3-3.2V2h3.2z"/></svg>
+</a>
+<a href="https://youtube.com/@subxculturex" aria-label="YouTube" target="_blank" rel="noopener">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l6 3-6 3V9z" fill="currentColor" stroke="none"/></svg>
+</a>
+</div>
+</div>
+</header>
+<main id="main">
+<section class="hero">
+<div class="wrap">
+<p class="hero-eyebrow">Downloads</p>
+<h1>Free to keep.</h1>
+<p class="hero-lede">Wallpapers, cover art, and mixes — no email required, no catch. Click anything to preview it first.</p>
+</div>
+</section>
+
+<section id="downloads-content">
+<div class="wrap">
+
+<div class="dl-featured" id="featuredWrap" style="display:none;">
+<h2>Featured</h2>
+<div class="dl-carousel" id="featuredCarousel"></div>
+</div>
+
+<div class="dl-grid" id="downloadsGrid">
+<p class="dl-empty">Loading downloads…</p>
+</div>
+
+</div>
+</section>
+</main>
+
+<div class="dl-lightbox" id="dlLightbox">
+<button class="dl-lightbox-close" id="dlLightboxClose" aria-label="Close">&times;</button>
+<div class="dl-lightbox-inner">
+<img id="dlLightboxImg" src="" alt="">
+<div class="dl-lightbox-meta">
+<div>
+<h3 id="dlLightboxTitle"></h3>
+<p id="dlLightboxDesc"></p>
+</div>
+<a class="dl-lightbox-download" id="dlLightboxDownload" href="#" download>Download</a>
+</div>
+</div>
+</div>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="footer-grid">
+<div><img src="logo.svg" alt="Sub Culture" class="footer-logo-img"></div>
+<div>
+<h4>Navigate</h4>
+<ul>
+<li><a href="index.html">Articles</a></li>
+<li><a href="photography.html">Photo &amp; Video</a></li>
+<li><a href="downloads.html">Downloads</a></li>
+<li><a href="trivia.html">Daily Trivia</a></li>
+<li><a href="index.html#live-scores">Live Scores</a></li>
+</ul>
+</div>
+<div>
+<h4>Follow</h4>
+<ul>
+<li><a href="https://instagram.com/subxculturex" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a></li>
+<li><a href="https://tiktok.com/@subxculturex" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 2c.3 2.4 1.8 4 4.3 4.3v3.1c-1.6.1-3-.4-4.3-1.3v6.4c0 3.6-2.9 6.5-6.5 6.5S3.5 18.1 3.5 14.5 6.4 8 10 8c.4 0 .8 0 1.2.1v3.2c-.4-.1-.8-.2-1.2-.2-1.8 0-3.2 1.4-3.2 3.2s1.4 3.2 3.2 3.2 3.3-1.4 3.3-3.2V2h3.2z"/></svg></a></li>
+<li><a href="https://youtube.com/@subxculturex" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l6 3-6 3V9z" fill="currentColor" stroke="none"/></svg></a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom"><span>© <span id="year"></span> Sub Culture. All rights reserved.</span></div>
+</div>
+</footer>
+<script src="script.js"></script>
+<script data-goatcounter="https://subculture.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script src="player.js"></script>
+
+<script>
+(function () {
+  "use strict";
+
+  var FEATURED_COUNT = 4;
+
+  function esc(s) {
+    return (s == null ? "" : String(s)).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function playViaPlayer(file, tries) {
+    tries = tries || 0;
+    if (window.ScPlayer && window.ScPlayer.playTrackByFile) {
+      window.ScPlayer.playTrackByFile(file);
+    } else if (tries < 30) {
+      setTimeout(function () { playViaPlayer(file, tries + 1); }, 150);
+    }
+  }
+
+  function openLightbox(item) {
+    document.getElementById("dlLightboxImg").src = item.file;
+    document.getElementById("dlLightboxImg").alt = item.title;
+    document.getElementById("dlLightboxTitle").textContent = item.title;
+    document.getElementById("dlLightboxDesc").textContent = item.description || "";
+    document.getElementById("dlLightboxDownload").href = item.file;
+    document.getElementById("dlLightbox").classList.add("open");
+  }
+  function closeLightbox() {
+    document.getElementById("dlLightbox").classList.remove("open");
+  }
+  document.getElementById("dlLightboxClose").addEventListener("click", closeLightbox);
+  document.getElementById("dlLightbox").addEventListener("click", function (e) {
+    if (e.target.id === "dlLightbox") closeLightbox();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeLightbox();
+  });
+
+  function buildCard(item) {
+    var card = document.createElement("div");
+    card.className = "dl-card";
+
+    var thumbHtml;
+    if (item.type === "mp3") {
+      thumbHtml =
+        '<div class="dl-thumb dl-audio">' +
+          '<div class="dl-audio-bars"><span></span><span></span><span></span><span></span><span></span></div>' +
+        '</div>';
+    } else {
+      thumbHtml =
+        '<div class="dl-thumb">' +
+          '<img src="' + esc(item.file) + '" alt="' + esc(item.title) + '" loading="lazy">' +
+          '<span class="dl-zoom-hint">&#128269;</span>' +
+        '</div>';
+    }
+
+    card.innerHTML =
+      thumbHtml +
+      '<div class="dl-body">' +
+        '<p class="dl-title">' + esc(item.title) + '</p>' +
+        '<p class="dl-desc">' + esc(item.description || "") + '</p>' +
+        '<div class="dl-actions">' +
+          (item.type === "mp3"
+            ? '<button class="dl-play">Play</button><a class="dl-ghost" href="' + esc(item.file) + '" download>Download</a>'
+            : '<button class="dl-ghost dl-preview">Preview</button><a href="' + esc(item.file) + '" download>Download</a>'
+          ) +
+        '</div>' +
+      '</div>';
+
+    if (item.type === "mp3") {
+      card.querySelector(".dl-play").addEventListener("click", function () {
+        playViaPlayer(item.file);
+      });
+    } else {
+      var openIt = function () { openLightbox(item); };
+      card.querySelector(".dl-thumb").addEventListener("click", openIt);
+      card.querySelector(".dl-preview").addEventListener("click", openIt);
+    }
+
+    return card;
+  }
+
+  fetch("downloads.json")
+    .then(function (r) { return r.json(); })
+    .then(function (list) {
+      list = list || [];
+      var grid = document.getElementById("downloadsGrid");
+      var carousel = document.getElementById("featuredCarousel");
+      var featuredWrap = document.getElementById("featuredWrap");
+
+      if (!list.length) {
+        grid.innerHTML = '<p class="dl-empty">Nothing here yet — check back soon.</p>';
+        return;
+      }
+
+      grid.innerHTML = "";
+      list.forEach(function (item) {
+        grid.appendChild(buildCard(item));
+      });
+
+      var featured = list.slice(0, FEATURED_COUNT);
+      if (featured.length) {
+        carousel.innerHTML = "";
+        featured.forEach(function (item) {
+          carousel.appendChild(buildCard(item));
+        });
+        featuredWrap.style.display = "block";
+      }
+    })
+    .catch(function () {
+      document.getElementById("downloadsGrid").innerHTML =
+        '<p class="dl-empty">Couldn\u2019t load downloads right now \u2014 refresh to try again.</p>';
+    });
+})();
+</script>
+</body>
+</html>
