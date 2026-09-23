@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat — Sub Culture</title>
+  <meta name="description" content="Sub Culture community chat and calls.">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+  <header class="chat-header">
+    <div class="chat-header-inner">
+      <a class="brand" href="index.html" aria-label="Sub Culture home">
+        <img src="logo.svg" alt="Sub Culture">
+      </a>
+      <div class="header-title">
+        <strong>COMMUNITY CHAT</strong>
+        <span id="connection-status" class="status offline">Connecting…</span>
+      </div>
+      <a class="back-link" href="index.html">← Back</a>
+    </div>
+  </header>
+
+  <main class="chat-shell">
+    <section class="join-card" id="join-card">
+      <img src="logo.svg" alt="Sub Culture" class="join-logo">
+      <h1>SUB CULTURE CHAT</h1>
+      <p>Join the lounge to chat with other visitors and make audio or video calls.</p>
+      <form id="join-form">
+        <label for="username">Your display name</label>
+        <div class="join-row">
+          <input id="username" name="username" maxlength="24" autocomplete="nickname"
+                 placeholder="Enter your name" required>
+          <button class="button" type="submit">Join Chat</button>
+        </div>
+        <p class="privacy-note">Your browser will ask for microphone/camera permission only when you start a call.</p>
+      </form>
+    </section>
+
+    <section class="chat-app hidden" id="chat-app" aria-label="Sub Culture chat">
+      <aside class="members-panel">
+        <div class="panel-heading">
+          <h2>ONLINE</h2>
+          <span id="member-count">0</span>
+        </div>
+        <div id="members-list" class="members-list"></div>
+        <div class="members-help">Select a person to call. Calls use your browser's microphone/camera.</div>
+      </aside>
+
+      <section class="conversation">
+        <div id="messages" class="messages" aria-live="polite"></div>
+        <form id="message-form" class="message-form">
+          <input id="message-input" maxlength="1000" autocomplete="off"
+                 placeholder="Write a message…" aria-label="Message">
+          <button class="send-button" type="submit">Send</button>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <div id="call-modal" class="call-modal hidden" role="dialog" aria-modal="true" aria-labelledby="call-title">
+    <div class="call-window">
+      <div class="call-topbar">
+        <div>
+          <strong id="call-title">Call</strong>
+          <span id="call-state">Connecting…</span>
+        </div>
+        <button id="end-call-top" class="icon-button" type="button" aria-label="End call">×</button>
+      </div>
+
+      <div class="video-stage">
+        <video id="remote-video" autoplay playsinline></video>
+        <video id="local-video" autoplay playsinline muted></video>
+        <div id="audio-only-label" class="audio-only-label hidden">AUDIO CALL</div>
+      </div>
+
+      <div class="call-controls">
+        <button id="toggle-mic" class="control-button" type="button">Mute</button>
+        <button id="toggle-camera" class="control-button" type="button">Camera off</button>
+        <button id="end-call" class="control-button end" type="button">End call</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="incoming-call" class="incoming hidden" role="dialog" aria-modal="true">
+    <div class="incoming-card">
+      <span class="incoming-label">INCOMING CALL</span>
+      <h2 id="incoming-name">Someone is calling</h2>
+      <p id="incoming-type">Video call</p>
+      <div class="incoming-actions">
+        <button id="decline-call" class="control-button end" type="button">Decline</button>
+        <button id="accept-call" class="control-button accept" type="button">Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="chat.js"></script>
+</body>
+</html>
