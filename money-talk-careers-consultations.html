@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consultations & How They Work — Money Talk: Careers | Sub Culture</title>
+<meta name="description" content="Why the meeting before the work is its own kind of work — how consultation fees work across law, medicine, engineering, IT and more.">
+<link rel="canonical" href="https://subxculturex.com/money-talk-careers-consultations.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sub Culture">
+<meta property="og:title" content="Consultations, and how they work — fees and all">
+<meta property="og:description" content="Why the meeting before the work is its own kind of work, and why professionals across every industry are right to charge for it.">
+<meta property="og:url" content="https://subxculturex.com/money-talk-careers-consultations.html">
+<meta property="og:image" content="https://subxculturex.com/consultation-hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Consultations, and how they work — fees and all">
+<meta name="twitter:description" content="Why professionals across every industry are right to charge for the meeting before the work.">
+<meta name="twitter:image" content="https://subxculturex.com/consultation-hero.jpg">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B0A08;
+    --paper:#F2ECDC;
+    --paper-soft:#EAE2CC;
+    --rule:#CDBF9C;
+    --muted:#5C5546;
+
+    --legal:#7C2D2D;
+    --medical:#1F6F6F;
+    --accounting:#A9791E;
+    --engineering:#C1541C;
+    --architecture:#3B4C6B;
+    --it:#5B4B8A;
+    --marketing:#B8365E;
+    --finance:#3F6B3F;
+    --automotive:#4B4F52;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Fraunces',Georgia,'Times New Roman',serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+    margin:0;
+  }
+
+  img{max-width:100%;display:block;}
+
+  a{color:inherit;}
+
+  .wrap{max-width:1160px;margin:0 auto;padding:0 28px;}
+  .prose{max-width:680px;margin:0 auto;padding:0 28px;}
+
+  /* ---------- Masthead ---------- */
+  .masthead{
+    background:var(--ink);
+    color:var(--paper);
+    padding:20px 0;
+  }
+  .masthead .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+  }
+  .masthead .brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .masthead .brand img{
+    width:38px;height:38px;border-radius:50%;
+    object-fit:cover;
+  }
+  .masthead .brand-name{
+    font-family:'Fraunces',serif;
+    font-size:19px;
+    font-weight:600;
+    letter-spacing:0.02em;
+  }
+  .masthead .kicker{
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    color:#C9BFA1;
+    text-align:right;
+  }
+  .masthead .kicker span{display:block;}
+  .masthead .kicker .series{color:var(--paper);font-weight:600;margin-top:2px;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:var(--ink);
+  }
+  .hero img{
+    width:100%;
+    height:62vh;
+    min-height:400px;
+    max-height:620px;
+    object-fit:cover;
+    opacity:0.82;
+  }
+  .hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(11,10,8,0.15) 0%, rgba(11,10,8,0.35) 55%, rgba(11,10,8,0.94) 100%);
+    display:flex;
+    align-items:flex-end;
+  }
+  .hero-text{
+    color:var(--paper);
+    width:100%;
+    padding:0 28px 46px;
+    max-width:1160px;
+    margin:0 auto;
+  }
+  .hero-eyebrow{
+    font-size:13px;
+    letter-spacing:0.16em;
+    color:#D8AE7A;
+    margin-bottom:14px;
+    font-weight:600;
+  }
+  .hero-title{
+    font-size:clamp(34px,5.4vw,62px);
+    line-height:1.04;
+    max-width:780px;
+  }
+  .hero-sub{
+    margin-top:18px;
+    max-width:560px;
+    font-size:17px;
+    color:#DCD3BB;
+    font-family:'Inter',sans-serif;
+  }
+
+  /* ---------- Byline strip ---------- */
+  .byline{
+    border-bottom:1px solid var(--rule);
+    padding:16px 0;
+    font-size:13.5px;
+    color:var(--muted);
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+  .byline strong{color:var(--ink);}
+
+  /* ---------- Article body ---------- */
+  article{padding:56px 0 0;}
+
+  .dropcap p:first-of-type::first-letter{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:64px;
+    float:left;
+    line-height:0.8;
+    padding:8px 10px 0 0;
+    color:var(--engineering);
+  }
+
+  .prose p{margin:0 0 20px;}
+  .prose h2{
+    font-size:28px;
+    margin:64px 0 20px;
+  }
+  .prose h3{
+    font-size:19px;
+    margin:34px 0 12px;
+  }
+
+  .section-tag{
+    display:inline-block;
+    font-size:12px;
+    letter-spacing:0.12em;
+    font-weight:600;
+    color:var(--engineering);
+    margin-bottom:10px;
+  }
+
+  /* ---------- Numbered list ---------- */
+  .anatomy{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0 40px;
+    margin:28px 0 8px;
+    max-width:680px;
+  }
+  .anatomy li{
+    list-style:none;
+    display:flex;
+    gap:14px;
+    padding:16px 0;
+    border-top:1px solid var(--rule);
+  }
+  .anatomy li:nth-child(1),.anatomy li:nth-child(2){border-top:none;}
+  .anatomy .num{
+    font-family:'Fraunces',serif;
+    font-size:20px;
+    font-weight:600;
+    color:var(--engineering);
+    min-width:26px;
+  }
+  .anatomy p{margin:0;font-size:15.5px;color:var(--ink);}
+
+  /* ---------- Callout / example box ---------- */
+  .callout{
+    background:var(--paper-soft);
+    border-left:3px solid var(--engineering);
+    padding:26px 30px;
+    margin:36px 0;
+    max-width:680px;
+  }
+  .callout .label{
+    font-size:12px;
+    letter-spacing:0.12em;
+    font-weight:600;
+    color:var(--engineering);
+    margin-bottom:10px;
+    display:block;
+  }
+  .callout p{margin:0;font-style:italic;color:var(--ink);font-size:16px;}
+
+  /* ---------- Comparison table ---------- */
+  .compare-wrap{margin:34px 0 8px;max-width:680px;}
+  .compare{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14.5px;
+  }
+  .compare thead th{
+    text-align:left;
+    padding:14px 16px;
+    font-family:'Fraunces',serif;
+    font-size:16px;
+    font-weight:600;
+    color:var(--paper);
+  }
+  .compare thead th:first-child{background:var(--ink);}
+  .compare thead th:last-child{background:var(--engineering);}
+  .compare tbody td{
+    padding:13px 16px;
+    border-bottom:1px solid var(--rule);
+    vertical-align:top;
+  }
+  .compare tbody td:first-child{border-right:1px solid var(--rule);}
+  .compare tbody tr:nth-child(odd){background:rgba(205,191,156,0.18);}
+
+  /* ---------- Pull quote ---------- */
+  .pullquote{
+    margin:56px 0;
+    padding:38px 0;
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+  }
+  .pullquote .lines{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .pullquote .line{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(20px,3vw,28px);
+    line-height:1.3;
+  }
+  .pullquote .who{
+    font-family:'Inter',sans-serif;
+    font-style:normal;
+    font-size:12px;
+    letter-spacing:0.12em;
+    font-weight:600;
+    margin-right:10px;
+  }
+  .pullquote .line:nth-child(1) .who{color:var(--engineering);}
+  .pullquote .line:nth-child(2) .who{color:var(--architecture);}
+
+  /* ---------- Editorial image break ---------- */
+  .img-break{
+    max-width:960px;
+    margin:56px auto;
+    padding:0 28px;
+  }
+  .img-break figure{margin:0;}
+  .img-break img{width:100%;object-fit:cover;max-height:520px;}
+  .img-break figcaption{
+    font-size:13px;
+    color:var(--muted);
+    margin-top:10px;
+    padding-left:2px;
+    border-left:2px solid var(--engineering);
+    padding-left:10px;
+  }
+
+  /* ---------- Professions grid ---------- */
+  .professions{
+    background:var(--ink);
+    padding:64px 0 72px;
+    margin-top:64px;
+  }
+  .professions .head{
+    max-width:680px;
+    margin:0 auto 40px;
+    padding:0 28px;
+    color:var(--paper);
+  }
+  .professions .head h2{color:var(--paper);font-size:30px;}
+  .professions .head p{color:#C9BFA1;margin-top:12px;font-size:15.5px;}
+
+  .prof-grid{
+    max-width:1000px;
+    margin:0 auto;
+    padding:0 28px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2px;
+    background:#2A2620;
+  }
+  .prof-card{
+    background:var(--ink);
+    padding:26px 26px 24px;
+    position:relative;
+  }
+  .prof-card .bar{
+    width:34px;height:4px;border-radius:2px;margin-bottom:16px;
+  }
+  .prof-card h3{
+    color:var(--paper);
+    font-size:18px;
+    margin-bottom:8px;
+  }
+  .prof-card p{
+    color:#B9AF95;
+    font-size:14px;
+    margin:0;
+    line-height:1.55;
+  }
+  .prof-card .fee{
+    display:inline-block;
+    margin-top:12px;
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.03em;
+    color:var(--ink);
+    padding:4px 10px;
+    border-radius:20px;
+  }
+
+  .legal .bar,.legal .fee{background:var(--legal);}
+  .medical .bar{background:var(--medical);}
+  .accounting .bar{background:var(--accounting);}
+  .engineering .bar{background:var(--engineering);}
+  .architecture .bar{background:var(--architecture);}
+  .it .bar{background:var(--it);}
+  .marketing .bar{background:var(--marketing);}
+  .finance .bar{background:var(--finance);}
+  .automotive .bar{background:var(--automotive);}
+  .legal .fee{color:var(--paper);}
+
+  /* ---------- Closing manifesto ---------- */
+  .closing{
+    background:var(--paper-soft);
+    padding:64px 0 72px;
+  }
+  .closing .prose h2{margin-top:0;}
+  .closing .final-line{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:22px;
+    line-height:1.4;
+    margin-top:24px;
+    color:var(--ink);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--ink);
+    color:#8F8770;
+    padding:34px 0;
+    font-size:13px;
+  }
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  footer .fbrand{
+    display:flex;align-items:center;gap:10px;
+    color:var(--paper);
+    font-family:'Fraunces',serif;
+    font-size:15px;
+  }
+  footer .fbrand img{width:24px;height:24px;border-radius:50%;object-fit:cover;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:680px){
+    .anatomy{grid-template-columns:1fr;}
+    .anatomy li:nth-child(2){border-top:1px solid var(--rule);}
+    .prof-grid{grid-template-columns:1fr;}
+    .compare thead th{font-size:14px;padding:10px 12px;}
+    .compare tbody td{padding:10px 12px;font-size:13.5px;}
+    .masthead .kicker{text-align:right;font-size:11px;}
+    .hero-title{font-size:clamp(28px,8vw,40px);}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main" style="position:absolute;left:-9999px;">Skip to content</a>
+<header style="background:#111;">
+<div class="wrap" style="display:flex;align-items:center;justify-content:space-between;padding:1rem 28px;gap:1rem;flex-wrap:wrap;">
+<a href="index.html" style="display:flex;align-items:center;">
+<img src="logo.svg" alt="Sub Culture" style="height:28px;">
+</a>
+<nav>
+<ul style="display:flex;gap:1.25rem;list-style:none;margin:0;padding:0;flex-wrap:wrap;">
+<li><a href="index.html" style="color:#f4f2ee;text-decoration:none;font-size:.85rem;">Articles</a></li>
+<li><a href="photography.html" style="color:#f4f2ee;text-decoration:none;font-size:.85rem;">Photo &amp; Video</a></li>
+<li><a href="downloads.html" style="color:#f4f2ee;text-decoration:none;font-size:.85rem;">Downloads</a></li>
+<li><a href="trivia.html" style="color:#f4f2ee;text-decoration:none;font-size:.85rem;">Daily Trivia</a></li>
+<li><a href="index.html#live-scores" style="color:#f4f2ee;text-decoration:none;font-size:.85rem;">Live Scores</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class="masthead">
+  <div class="wrap">
+    <div class="brand">
+      <img src="sc-logo.png" alt="Sub Culture logo">
+      <span class="brand-name">Sub Culture</span>
+    </div>
+    <div class="kicker">
+      <span>MONEY TALK</span>
+      <span class="series">Careers, Fees & the Business of Expertise</span>
+    </div>
+  </div>
+</div>
+
+<div class="hero">
+  <img src="consultation-hero.jpg" alt="Advisor reviewing tax paperwork with a client across a desk">
+  <div class="hero-overlay">
+    <div class="hero-text">
+      <div class="hero-eyebrow">MONEY TALK: CAREERS — ISSUE 04</div>
+      <h1 class="hero-title">Consultations, and how they work — fees and all</h1>
+      <p class="hero-sub">Why the meeting before the work is its own kind of work, and why professionals across every industry are right to charge for it.</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="byline">
+    <span><strong>Money Talk: Careers</strong></span>
+    <span>Fees, expertise & the professionals who charge for them</span>
+    <span>7 min read</span>
+  </div>
+</div>
+
+<article>
+  <div class="prose dropcap">
+    <p>Once again, I've found myself in a situation where a business approached me and tacitly sought to bypass paying consultation fees, all under the guise of asking for a "quotation." This article covers a few points which, hopefully, can answer the consultation question once and for all.</p>
+
+    <p>A consultation fee is a fee charged for the use of a professional's time, expertise, analysis, assessment, advice or initial problem-solving. It is not a formality before the "real" work begins — it <em>is</em> the real work of figuring out what the real work should be.</p>
+
+    <h2><span class="section-tag">01 — The anatomy of a consultation</span><br>What actually happens in the room</h2>
+    <p>A consultation, whatever the profession, tends to involve some or all of the following elements:</p>
+
+    <ul class="anatomy">
+      <li><span class="num">1</span><p>Physically or virtually meeting with a client</p></li>
+      <li><span class="num">2</span><p>Understanding the client's requirements</p></li>
+      <li><span class="num">3</span><p>Reviewing documents and other information</p></li>
+      <li><span class="num">4</span><p>Diagnosing a problem</p></li>
+      <li><span class="num">5</span><p>Providing professional advice</p></li>
+      <li><span class="num">6</span><p>Developing preliminary recommendations and quotations</p></li>
+      <li><span class="num">7</span><p>Strategising on the best way forward after the consultation</p></li>
+    </ul>
+
+    <p>The fee is paid for the consultation itself — and it's common for a project to involve several consultations, depending on its scale.</p>
+
+    <div class="callout">
+      <span class="label">A practical example</span>
+      <p>A client approaches an architect and says they want to build a house. Before preparing plans, the architect spends time discussing the client's requirements, examining the site's information and explaining possible design options. That initial professional advice is what the consultation fee pays for — not the finished plans.</p>
+    </div>
+
+    <h2><span class="section-tag">02 — Two different questions</span><br>Consultation vs. quotation</h2>
+    <p>The two are often mistaken for each other, or wrongly bundled together when they shouldn't be. Here's where they actually differ:</p>
+
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th>Consultation fee</th><th>Quotation</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Pays for professional advice and time</td><td>States the expected price for specified work</td></tr>
+          <tr><td>Usually occurs before the scope is fully defined</td><td>Usually follows an understanding of the scope</td></tr>
+          <tr><td>Can help establish what the client actually needs</td><td>Defines what the client will receive for the quoted price</td></tr>
+          <tr><td>May be charged by the hour, session or fixed amount</td><td>Usually represents a fixed price or pricing structure</td></tr>
+          <tr><td>Does not necessarily include the subsequent work</td><td>Normally relates to specific work or deliverables</td></tr>
+          <tr><td>Helps the professional determine what should be quoted</td><td>Allows the client to evaluate the cost of proceeding</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pullquote">
+      <div class="lines">
+        <div class="line"><span class="who">CONSULTATION</span>"What do I need, and how should I approach it?"</div>
+        <div class="line"><span class="who">QUOTATION</span>"How much will it cost to provide the agreed service?"</div>
+      </div>
+    </div>
+
+    <h2><span class="section-tag">03 — Why it matters</span><br>The significance of consultation fees</h2>
+    <p>For the professional, the fee is a monetary indemnity for the time spent in a meeting with a prospective client — covering their time, experience and professional judgement.</p>
+    <p>There's no legally binding obligation on a client to proceed with the professional after the consultation, and the fee covers the bare minimum in the event the client declines, or can't afford, the quotation to proceed with the project.</p>
+    <p>Consultations sift clients seeking free advice from clients genuinely intending to pay. Many matters simply cannot be quoted without a necessary consultation first — one that builds a relationship between professional and client, and surfaces the critical information both parties need to reach a shared understanding of the matter and, eventually, a quotation. The process also lets the client calibrate their own expectations, and receive quality advice proportionate to the professional's experience.</p>
+  </div>
+
+  <div class="img-break">
+    <figure>
+      <img src="engineer-consult.jpg" alt="Three professionals reviewing building plans in a meeting">
+      <figcaption>The consultation is where the questions get asked — before a single figure gets quoted.</figcaption>
+    </figure>
+  </div>
+
+  <div class="prose">
+    <h2><span class="section-tag">04 — The other side</span><br>The disadvantages of consultation fees</h2>
+    <p>Potential clients are often put off by having to pay for a consultation at all. Naturally, the fee tends to rise with the expertise sought, the professional's experience, and the duration of the session — usually billed per hour.</p>
+    <p>That fee can then become a stumbling block for a client who arrives with the misconception that they'll only ever pay for the actual project, i.e. the quotation.</p>
+  </div>
+
+  <div class="professions">
+    <div class="head">
+      <h2><span class="section-tag" style="color:#D8AE7A;">05 — Across the professions</span>Where consulting is the job before the job</h2>
+      <p>From courtrooms to construction sites, the shape of a consultation changes — but the principle holds everywhere expertise is for hire.</p>
+    </div>
+    <div class="prof-grid">
+      <div class="prof-card legal">
+        <span class="bar"></span>
+        <h3>Legal</h3>
+        <p>A lawyer may charge for an initial consultation to understand a dispute, review relevant documents and explain possible legal options.</p>
+        <span class="fee">Consultation: R2,000 · work billed separately</span>
+      </div>
+      <div class="prof-card medical">
+        <span class="bar"></span>
+        <h3>Medical</h3>
+        <p>A doctor's consultation is itself a professional service — taking a history, examination, diagnosis and treatment recommendations. Here, the consultation is often the primary service, not a preliminary step.</p>
+      </div>
+      <div class="prof-card accounting">
+        <span class="bar"></span>
+        <h3>Accounting</h3>
+        <p>An accountant might charge for an initial consultation with a business owner seeking advice on tax, bookkeeping or business structuring, leading to a separate proposal for ongoing services.</p>
+      </div>
+      <div class="prof-card engineering">
+        <span class="bar"></span>
+        <h3>Engineering</h3>
+        <p>An engineer might charge to inspect a structural problem before determining what remedial work is required — the assessment billed separately from the eventual repair.</p>
+      </div>
+      <div class="prof-card architecture">
+        <span class="bar"></span>
+        <h3>Architecture</h3>
+        <p>An architect could charge for an initial meeting and site assessment before developing detailed plans, establishing the client's requirements and the scope of work.</p>
+      </div>
+      <div class="prof-card it">
+        <span class="bar"></span>
+        <h3>IT</h3>
+        <p>An IT consultant might charge for diagnosing a network or cybersecurity problem before recommending a solution — the diagnosis leading to a separate implementation quote.</p>
+      </div>
+      <div class="prof-card marketing">
+        <span class="bar"></span>
+        <h3>Marketing</h3>
+        <p>A marketing consultant could charge for analysing a company's current strategy and providing recommendations, followed by a proposal for ongoing services.</p>
+      </div>
+      <div class="prof-card finance">
+        <span class="bar"></span>
+        <h3>Financial planning</h3>
+        <p>A financial professional may charge for an initial consultation assessing a client's objectives and circumstances, before providing a detailed financial plan.</p>
+      </div>
+      <div class="prof-card automotive">
+        <span class="bar"></span>
+        <h3>Automotive</h3>
+        <p>A specialist mechanic may charge a diagnostic fee before determining repairs — a familiar case, since "how much to fix my car?" can rarely be answered responsibly upfront.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="closing">
+    <div class="prose">
+      <h2><span class="section-tag">06 — Conclusion</span>When consultation fees make sense</h2>
+      <p>Not every consultation needs a fee. A short introductory conversation — brief, requiring little preparation, mainly there to check that client and professional are a good match — can reasonably be offered for free.</p>
+      <p>A fee becomes more appropriate once the client is seeking specific advice, documents need reviewing, research is required, or the professional must spend real time assessing a problem. At that point, the client is receiving expertise, not simply having a chat.</p>
+      <p>Professionals who charge should be transparent about what the fee covers: the duration, whether document review is included, what the client walks away with, and whether the fee is credited against future work. Clear communication prevents misunderstandings and lets the client decide with open eyes.</p>
+      <p>Clients, in turn, get more from a paid consultation by preparing questions in advance, bringing relevant documents, and stating the problem clearly — and by confirming upfront whether further work is billed separately, and whether the consultation fee comes off the eventual quote.</p>
+      <p class="final-line">A consultation fee isn't simply a charge for a meeting. It's payment for a professional's time, knowledge, experience and judgement — and the one principle that never changes is transparency: both sides should know what's being paid for, what's being provided, and what happens next.</p>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand">
+      <img src="sc-logo.png" alt="Sub Culture logo">
+      Sub Culture
+    </div>
+    <div>Money Talk: Careers — a Sub Culture original series</div>
+  </div>
+</footer>
+
+<footer style="background:#111;padding:2rem 0;">
+<div class="wrap" style="display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
+<a href="index.html" style="color:#f4f2ee;text-decoration:none;font-size:.8rem;">Articles</a>
+<a href="photography.html" style="color:#f4f2ee;text-decoration:none;font-size:.8rem;">Photo &amp; Video</a>
+<a href="downloads.html" style="color:#f4f2ee;text-decoration:none;font-size:.8rem;">Downloads</a>
+<a href="trivia.html" style="color:#f4f2ee;text-decoration:none;font-size:.8rem;">Daily Trivia</a>
+<a href="index.html#live-scores" style="color:#f4f2ee;text-decoration:none;font-size:.8rem;">Live Scores</a>
+<a href="https://instagram.com/subxculturex" target="_blank" rel="noopener" style="color:#f4f2ee;text-decoration:none;font-size:.8rem;">Instagram</a>
+<a href="https://tiktok.com/@subxculturex" target="_blank" rel="noopener" style="color:#f4f2ee;text-decoration:none;font-size:.8rem;">TikTok</a>
+</div>
+</footer>
+
+<script src="script.js"></script>
+<script data-goatcounter="https://subculture.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script src="player.js"></script>
+
+</body>
+</html>
