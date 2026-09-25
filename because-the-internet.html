@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Because the Internet: Childish Gambino's Cinematic Album | Sub Culture</title>
+<meta name="description" content="How Childish Gambino's Because the Internet became a cinematic album — the mansion, the screenplay, the ensemble cast, and why it still holds up.">
+<link rel="canonical" href="https://subxculturex.com/because-the-internet.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sub Culture">
+<meta property="og:title" content="Because the Internet: Childish Gambino's Cinematic Album">
+<meta property="og:description" content="More than 57 minutes across 19 songs — how Because the Internet became a cinematic album, and came with its own screenplay.">
+<meta property="og:url" content="https://subxculturex.com/because-the-internet.html">
+<meta property="og:image" content="https://subxculturex.com/because-the-internet-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Because the Internet: Childish Gambino's Cinematic Album">
+<meta name="twitter:description" content="How Because the Internet became a cinematic album, and came with its own screenplay.">
+<meta name="twitter:image" content="https://subxculturex.com/because-the-internet-poster.jpg">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* Palette pulled straight from the poster: dusty teal sky, sunset gold/orange,
+   warm cream paper, ink for contrast. Scoped to #bti so it can't leak. */
+:root{
+  --cream:#f1ead9; --teal:#3f7472; --teal-deep:#274f4f;
+  --gold:#e7a23a; --coral:#e2703f; --ink:#1c1a15; --sub:#5c5648;
+}
+body{margin:0;background:#111;color:var(--ink);font-family:'Work Sans',sans-serif;}
+#bti{background:var(--cream);}
+#bti .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+
+/* site nav */
+.sc-nav{background:var(--ink);}
+.sc-nav .wrap{max-width:1100px;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;flex-wrap:wrap;gap:.75rem;}
+.sc-nav a.brand{display:flex;align-items:center;}
+.sc-nav a.brand img{height:26px;}
+.sc-nav ul{display:flex;gap:1.25rem;list-style:none;margin:0;padding:0;flex-wrap:wrap;}
+.sc-nav a{color:var(--cream);text-decoration:none;font-size:.82rem;}
+
+/* masthead */
+.bti-masthead{background:var(--teal-deep);color:var(--cream);padding:18px 0;}
+.bti-masthead .wrap{max-width:1100px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem;}
+.bti-masthead .brandrow{display:flex;align-items:center;gap:.6rem;}
+.bti-masthead img.sc{height:30px;}
+.bti-masthead .brandrow span{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;}
+.bti-masthead .kicker{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;opacity:.85;}
+
+/* hero */
+.bti-hero{max-width:1100px;margin:0 auto;padding:48px 24px 20px;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;}
+@media(max-width:760px){.bti-hero{grid-template-columns:1fr;padding-top:32px;}}
+.bti-hero-text .eyebrow{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin:0 0 .6rem;}
+.bti-hero-text h1{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3rem);line-height:1.05;margin:0 0 .8rem;color:var(--ink);}
+.bti-hero-text p{font-size:1.02rem;color:var(--sub);line-height:1.6;margin:0;}
+.bti-poster-frame{display:flex;justify-content:center;}
+.bti-poster-frame img{width:100%;max-width:320px;border-radius:6px;box-shadow:0 18px 44px rgba(39,79,79,.35);border:6px solid #fff;transform:rotate(-1.4deg);}
+
+/* article */
+.bti-byline{font-family:'Space Mono',monospace;font-size:.72rem;color:var(--sub);border-top:1px solid rgba(28,26,21,.15);border-bottom:1px solid rgba(28,26,21,.15);padding:12px 0;margin:2rem auto 0;max-width:760px;display:flex;gap:1rem;flex-wrap:wrap;text-transform:uppercase;letter-spacing:.04em;}
+#bti article{padding:2.2rem 0 1rem;}
+#bti p{font-size:1.04rem;line-height:1.75;margin:0 0 1.3rem;color:var(--ink);}
+#bti h2{font-family:'Fraunces',serif;font-size:1.5rem;margin:2.4rem 0 1rem;color:var(--teal-deep);}
+#bti .lede{font-size:1.18rem;font-weight:500;color:var(--teal-deep);}
+
+.bti-facts{background:#fff;border:1px solid rgba(28,26,21,.12);border-radius:8px;padding:1.4rem 1.6rem;margin:1.8rem 0;}
+.bti-facts h3{font-family:'Space Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--coral);margin:0 0 .8rem;}
+.bti-facts ul{margin:0;padding:0;list-style:none;display:grid;gap:.55rem;}
+.bti-facts li{font-size:.92rem;line-height:1.5;}
+.bti-facts strong{color:var(--teal-deep);}
+
+.bti-quote{background:var(--teal-deep);color:var(--cream);border-radius:8px;padding:1.8rem 2rem;margin:2.2rem 0;}
+.bti-quote p{font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;line-height:1.55;color:var(--cream);margin:0 0 .6rem;}
+.bti-quote cite{font-family:'Space Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;opacity:.8;font-style:normal;}
+
+.bti-spotify{margin:2rem 0;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.15);}
+
+.bti-break{margin:2.4rem -24px;}
+.bti-break img{width:100%;display:block;}
+.bti-break figcaption{font-family:'Space Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--sub);padding:.6rem 24px 0;}
+
+.bti-screenplay{background:#fff;border-left:4px solid var(--gold);padding:1.4rem 1.6rem;margin:1.8rem 0;border-radius:0 8px 8px 0;}
+.bti-screenplay a{color:var(--coral);}
+
+/* Community Chat callout — pulled out of the essay flow, its own moment */
+.bti-chat{background:linear-gradient(135deg,var(--coral) 0%,var(--gold) 100%);border-radius:12px;padding:2rem 2.2rem;margin:3rem 0 1rem;color:#241505;}
+.bti-chat .chat-kicker{font-family:'Space Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;margin:0 0 .5rem;opacity:.85;}
+.bti-chat h2{font-family:'Fraunces',serif;color:#241505;margin:0 0 .8rem;font-size:1.6rem;}
+.bti-chat p{color:#241505;font-size:.98rem;line-height:1.65;margin:0 0 1rem;}
+.bti-chat .chat-actions{display:flex;gap:.7rem;flex-wrap:wrap;}
+.bti-chat a.btn{background:#241505;color:var(--cream);padding:.65rem 1.2rem;border-radius:6px;text-decoration:none;font-size:.85rem;font-weight:600;}
+.bti-chat a.btn.ghost{background:transparent;border:1.5px solid #241505;color:#241505;}
+
+/* footer */
+.sc-footer{background:var(--ink);padding:2rem 0;}
+.sc-footer .wrap{max-width:1100px;display:flex;justify-content:center;gap:1.4rem;flex-wrap:wrap;}
+.sc-footer a{color:var(--cream);text-decoration:none;font-size:.8rem;}
+</style>
+</head>
+<body>
+
+<a href="#main" style="position:absolute;left:-9999px;">Skip to content</a>
+<nav class="sc-nav">
+<div class="wrap">
+<a class="brand" href="index.html"><img src="logo.svg" alt="Sub Culture"></a>
+<ul>
+<li><a href="index.html">Articles</a></li>
+<li><a href="photography.html">Photo &amp; Video</a></li>
+<li><a href="downloads.html">Downloads</a></li>
+<li><a href="trivia.html">Daily Trivia</a></li>
+<li><a href="index.html#live-scores">Live Scores</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="bti">
+
+<div class="bti-masthead">
+<div class="wrap">
+<div class="brandrow">
+<img class="sc" src="sc-logo.png" alt="Sub Culture logo">
+<span>Sub Culture</span>
+</div>
+<span class="kicker">Film &amp; Music &mdash; Cinematic Albums</span>
+</div>
+</div>
+
+<main id="main">
+
+<div class="bti-hero">
+<div class="bti-hero-text">
+<p class="eyebrow">Album Retrospective</p>
+<h1>Because the Internet: Childish Gambino's Cinematic Album</h1>
+<p>Troy from <em>Community</em> is one very talented man. Depending on which version of him you met first &mdash; Childish Gambino, Donald Glover, or Earn from <em>Atlanta</em> &mdash; you already know he does everything, and does it with excellence.</p>
+</div>
+<div class="bti-poster-frame">
+<img src="because-the-internet-poster.jpg" alt="Because the Internet official poster, illustrated in a vintage tropical style">
+</div>
+</div>
+
+<div class="bti-byline">
+<span>Music &amp; Film</span>
+<span>&bull;</span>
+<span>5 min read</span>
+<span>&bull;</span>
+<span>Because the Internet, 2013</span>
+</div>
+
+<article class="wrap">
+
+<p class="lede">For us, it goes back to his <em>Community</em> days in 2009. It's safe to say Donald Glover has exceeded whatever expectations we had of him since.</p>
+
+<p>Because the Internet is cinematic because it's much more than 57 minutes spread across 19 songs. Released in 2013 as Childish Gambino's second studio album, it was recorded at a mansion he was renting at the time from former NBA player Chris Bosh &mdash; which tells you something about the scale of ambition here before you've even hit play.</p>
+
+<div class="bti-facts">
+<h3>The Credits</h3>
+<ul>
+<li><strong>Released:</strong> 2013 &mdash; Childish Gambino's second studio album</li>
+<li><strong>Recorded at:</strong> A mansion rented from former NBA player Chris Bosh</li>
+<li><strong>Featured artists:</strong> Chance the Rapper, Problem, Jhen&eacute; Aiko, Kilo Kish, Azealia Banks</li>
+<li><strong>Production:</strong> Ludwig G&ouml;ransson (Atlanta, Community, Black Panther, The Odyssey) and Gambino himself, among others</li>
+</ul>
+</div>
+
+<p>Speaking of cinematic &mdash; that ensemble cast and Göransson's fingerprints are exactly why the word fits. This isn't a guest-verse album; it's a produced one, in the fullest sense.</p>
+
+<h2>Listen for yourself</h2>
+<div class="bti-spotify">
+<iframe style="border:0;display:block;" src="https://open.spotify.com/embed/album/5h0KYWMZIg8xT6eRGYkNMh?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+
+<h2>Why Atlanta happened here</h2>
+<p>Glover has talked about wanting to create, write, act in, and produce his own show &mdash; the ambition that became <em>Atlanta</em>. Pursuing it meant scaling back his role on <em>Community</em>, and that gap is exactly where this album was made. Less TV, more studio time, and a mansion to do it in.</p>
+
+<figure class="bti-break">
+<img src="gambino-portrait.jpg" alt="Portrait of Childish Gambino in a tropical print shirt, lit in warm pink and orange tones">
+<figcaption>Because the Internet era &mdash; the visual language was always half the point</figcaption>
+</figure>
+
+<h2>What "Because the Internet" actually means</h2>
+<div class="bti-quote">
+<p>&ldquo;Because the internet I'm here, because the internet we're all here. It's the language of earth. Everyone keeps saying by this or that year, Mandarin or Spanish will be the most dominant language, but the internet is already a language we are all connected to; even my dad can understand the meme format. But the thing is, there are no rules, which is also the awesome thing.&rdquo;</p>
+<cite>&mdash; Childish Gambino</cite>
+</div>
+<p>Internet ubuntu, we'd like to believe.</p>
+
+<h2>The screenplay nobody finished</h2>
+<div class="bti-screenplay">
+<p style="margin:0;">Because the Internet came with its own screenplay, built around a central character called The Boy &mdash; living in a mansion, spending his days tweeting at celebrities and posting videos. Had it been fully developed, the film would have brought in Chance the Rapper, Rick Ross, and Jhen&eacute; Aiko as supporting characters. It never got made, but the screenplay is still out there: <a href="https://archive.org/details/because-the-internet-screenplay" target="_blank" rel="noopener">read it on archive.org</a>.</p>
+</div>
+
+</article>
+
+<div class="wrap">
+<div class="bti-chat">
+<p class="chat-kicker">Sub Culture &times; You</p>
+<h2>Come hang in the Community Chat</h2>
+<p>Sub Culture is an agency, a media-house, and a community. If you'd like us to cover you, your business, or anything else worth talking about, reach out by email or WhatsApp. We've also added a Community Chat where you can network, sell products, or just hang about &mdash; with plenty of tools to make it fun. Need more than chat? Free phone and video calling too. Bring your friends along and let's build together.</p>
+<div class="chat-actions">
+<a class="btn" href="https://wa.me/27796209349" target="_blank" rel="noopener">Join on WhatsApp</a>
+<a class="btn ghost" href="#" data-replace="your real Sub Culture email address">Email Us</a>
+</div>
+</div>
+</div>
+
+</main>
+</div>
+
+<footer class="sc-footer">
+<div class="wrap">
+<a href="index.html">Articles</a>
+<a href="photography.html">Photo &amp; Video</a>
+<a href="downloads.html">Downloads</a>
+<a href="trivia.html">Daily Trivia</a>
+<a href="index.html#live-scores">Live Scores</a>
+<a href="https://instagram.com/subxculturex" target="_blank" rel="noopener">Instagram</a>
+<a href="https://tiktok.com/@subxculturex" target="_blank" rel="noopener">TikTok</a>
+</div>
+</footer>
+
+<script src="script.js"></script>
+<script data-goatcounter="https://subculture.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script src="player.js"></script>
+</body>
+</html>
