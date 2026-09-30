@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contracts of the Heart | Sub Culture</title>
+<meta name="description" content="Free agents, short-term deals, and the long-term prize — dating, decoded as the contracts they actually are.">
+<link rel="canonical" href="https://subxculturex.com/contracts-of-the-heart.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sub Culture">
+<meta property="og:title" content="Contracts of the Heart">
+<meta property="og:description" content="No one is as predictable as a free agent. Dating, decoded as the contracts they actually are.">
+<meta property="og:url" content="https://subxculturex.com/contracts-of-the-heart.html">
+<meta property="og:image" content="https://subxculturex.com/contracts-rings-hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contracts of the Heart">
+<meta name="twitter:description" content="Free agents, short-term deals, and the long-term prize — dating, decoded.">
+<meta name="twitter:image" content="https://subxculturex.com/contracts-rings-hero.jpg">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Space+Mono:wght@400;500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* Palette pulled from the rings photo: deep navy, warm gold, soft cream.
+   Legal-document conceit throughout — "articles," fine print, a
+   signature line — matching the piece's own central joke. Scoped to
+   #coh so it can't leak. */
+:root{
+  --navy:#0e1a35; --navy-deep:#081025; --gold:#c9a227; --gold-soft:#e4c765;
+  --cream:#f2ede1; --sub:#a9b0c6; --ink:#1c1a15;
+}
+body{margin:0;background:var(--navy-deep);color:var(--cream);font-family:'Work Sans',sans-serif;}
+#coh .wrap{max-width:740px;margin:0 auto;padding:0 24px;}
+
+.sc-nav{background:#000;}
+.sc-nav .wrap{max-width:1100px;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;flex-wrap:wrap;gap:.75rem;}
+.sc-nav a.brand img{height:26px;}
+.sc-nav ul{display:flex;gap:1.25rem;list-style:none;margin:0;padding:0;flex-wrap:wrap;}
+.sc-nav a{color:var(--cream);text-decoration:none;font-size:.82rem;}
+
+.coh-masthead{background:var(--navy);border-bottom:1px solid rgba(201,162,39,.25);padding:16px 0;}
+.coh-masthead .wrap{max-width:1100px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem;}
+.coh-masthead .brandrow{display:flex;align-items:center;gap:.6rem;}
+.coh-masthead img.sc{height:28px;}
+.coh-masthead .brandrow span{font-family:'Fraunces',serif;font-weight:600;font-size:1rem;color:var(--cream);}
+.coh-masthead .kicker{font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-soft);}
+
+.coh-hero{max-width:1100px;margin:0 auto;position:relative;}
+.coh-hero img{width:100%;max-height:520px;object-fit:cover;display:block;filter:brightness(.55) saturate(1.1);}
+.coh-hero-text{position:absolute;left:0;right:0;bottom:0;padding:40px 28px;}
+.coh-hero-text .eyebrow{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 .7rem;}
+.coh-hero-text h1{font-family:'Fraunces',serif;font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.05;margin:0 0 .7rem;color:var(--cream);}
+.coh-hero-text p{font-size:1.02rem;color:var(--sub);max-width:52ch;margin:0;}
+
+.coh-byline{font-family:'Space Mono',monospace;font-size:.72rem;color:var(--sub);
+  border-top:1px solid rgba(201,162,39,.2);border-bottom:1px solid rgba(201,162,39,.2);
+  padding:12px 0;margin:0 auto;max-width:740px;display:flex;gap:1rem;flex-wrap:wrap;
+  text-transform:uppercase;letter-spacing:.04em;}
+
+#coh article{padding:2.4rem 0 1rem;}
+#coh p{font-size:1.05rem;line-height:1.8;margin:0 0 1.3rem;color:var(--cream);}
+#coh .lede{font-size:1.2rem;font-weight:500;color:var(--gold-soft);font-family:'Fraunces',serif;font-style:italic;}
+
+.coh-article-head{display:flex;align-items:baseline;gap:.8rem;margin:2.8rem 0 1.1rem;}
+.coh-article-head .no{font-family:'Space Mono',monospace;font-size:.75rem;color:var(--gold);
+  border:1px solid var(--gold);border-radius:999px;padding:.2rem .7rem;flex:0 0 auto;}
+.coh-article-head h2{font-family:'Fraunces',serif;font-size:1.55rem;margin:0;color:var(--cream);}
+
+.coh-clause{border-left:2px solid var(--gold);padding-left:1.1rem;margin:1.6rem 0;}
+.coh-clause p{color:var(--sub);font-size:.96rem;font-style:italic;margin:0;}
+
+.coh-break{margin:2.6rem -24px;position:relative;}
+.coh-break img{width:100%;display:block;filter:saturate(1.05);}
+.coh-break figcaption{font-family:'Space Mono',monospace;font-size:.7rem;text-transform:uppercase;
+  letter-spacing:.05em;color:var(--sub);padding:.6rem 24px 0;}
+
+.coh-fineprint{background:rgba(201,162,39,.06);border:1px solid rgba(201,162,39,.25);
+  border-radius:6px;padding:1.6rem 1.8rem;margin:2rem 0;}
+.coh-fineprint h3{font-family:'Space Mono',monospace;font-size:.7rem;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--gold);margin:0 0 .7rem;}
+.coh-fineprint p{font-size:.92rem;color:var(--sub);margin:0;}
+
+.coh-sign{margin:3rem 0 1rem;padding-top:2rem;border-top:1px dashed rgba(201,162,39,.4);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
+.coh-sign .field{flex:1;min-width:200px;}
+.coh-sign .line{border-bottom:1px solid var(--sub);height:2.4rem;margin-bottom:.4rem;}
+.coh-sign .label{font-family:'Space Mono',monospace;font-size:.68rem;text-transform:uppercase;
+  letter-spacing:.06em;color:var(--sub);}
+
+.sc-footer{background:#000;padding:2rem 0;}
+.sc-footer .wrap{max-width:1100px;display:flex;justify-content:center;gap:1.4rem;flex-wrap:wrap;}
+.sc-footer a{color:var(--cream);text-decoration:none;font-size:.8rem;}
+</style>
+</head>
+<body>
+
+<a href="#main" style="position:absolute;left:-9999px;">Skip to content</a>
+<nav class="sc-nav">
+<div class="wrap">
+<a class="brand" href="index.html"><img src="logo.svg" alt="Sub Culture"></a>
+<ul>
+<li><a href="index.html">Articles</a></li>
+<li><a href="photography.html">Photo &amp; Video</a></li>
+<li><a href="downloads.html">Downloads</a></li>
+<li><a href="trivia.html">Daily Trivia</a></li>
+<li><a href="media-kit.html">Collaborate</a></li>
+<li><a href="index.html#live-scores">Live Scores</a></li>
+</ul>
+</div>
+</nav>
+
+<div id="coh">
+
+<div class="coh-masthead">
+<div class="wrap">
+<div class="brandrow">
+<img class="sc" src="sc-logo.png" alt="Sub Culture logo">
+<span>Sub Culture</span>
+</div>
+<span class="kicker">Relationships &amp; Culture &mdash; The Love Olympics</span>
+</div>
+</div>
+
+<main id="main">
+
+<div class="coh-hero">
+<img src="contracts-rings-hero.jpg" alt="Close-up of wedding and engagement rings reflected on a dark blue surface">
+<div class="coh-hero-text">
+<p class="eyebrow">Relationships</p>
+<h1>Contracts of the Heart</h1>
+<p>Every relationship is a deal with a term length. Most people just never read what they signed.</p>
+</div>
+</div>
+
+<div class="coh-byline">
+<span>Relationships</span>
+<span>&bull;</span>
+<span>6 min read</span>
+<span>&bull;</span>
+<span>The Love Olympics</span>
+</div>
+
+<article class="wrap">
+
+<p class="lede">No one is as predictable as a free agent.</p>
+
+<p>Not the weather. Not your group chat's opinion on your situationship. Not even your own text-back time when you're actually interested, versus when you're not. A free agent &mdash; no ring, no kid on the school run, nothing and no one tying them to a franchise &mdash; is the most honest, least reliable player on the board. They've told you exactly what they are. The rest of us are the ones who keep forgetting to listen.</p>
+
+<p>Welcome to the Love Olympics, where every relationship, named or not, is really just a contract with a different length and a different set of clauses. Some are for a season. Some are for life. Almost none of them come with the terms actually spelled out, which is where most of the trouble starts. So let's spell them out.</p>
+
+<div class="coh-article-head">
+<span class="no">Article I</span>
+<h2>The Free Agent</h2>
+</div>
+<p>Every encounter with a free agent could, quite honestly, be your last. Not because they're cruel or careless, but because nothing on the books says they have to stay. No marriage, no shared lease, no parenthood, no contract clause binding them to any one team &mdash; which makes them the single most likely player in the league to relocate without notice.</p>
+<p>That's not a flaw in the system. It <em>is</em> the system. A free agent hasn't lied to you; they've simply never signed anything that says otherwise. The danger isn't that they'll leave. It's that everyone else at the table keeps mistaking their availability for a commitment neither party actually made.</p>
+
+<p>And yet the free agent is rarely short of interest. There's something magnetic about a player with no obligations on the books &mdash; no ex-team to answer to, no clause requiring loyalty to anyone but themselves. It reads as freedom, and freedom is attractive precisely because most people signed something, somewhere, that costs them a little of it. The mistake isn't wanting a free agent. It's assuming that wanting them enough will retroactively turn their open contract into an exclusive one.</p>
+
+<div class="coh-clause">
+<p>Clause 1.1 &mdash; Availability is not intent. Read the whole contract before you start planning the parade.</p>
+</div>
+
+<div class="coh-article-head">
+<span class="no">Article II</span>
+<h2>The Short-Term Contract</h2>
+</div>
+<p>You know this player. The one who visited for the holidays and never quite left your notifications. The situationship with an expiry date baked in from the first message. The one-night stand that somehow got a nickname. These are short-term contracts, and they're signed for reasons that are almost always a little bit selfish &mdash; which isn't an insult. Selfish, here, just means the terms are about you, not about building something that outlives the season.</p>
+<p>There's a good chance the short-term deal exists to satisfy something specific: a sexual or emotional itch, often an experiment with whatever isn't available in the main relationship, if there is one. It comes with a strange kind of generosity, too &mdash; short-term contracts often carry more immediate commitment than you'd expect. Exclusivity, for the duration. Some of the best holidays of your life, genuinely. Trips, clothing, dinners, money changing hands in both directions.</p>
+<p>What you won't get is the group photo. You won't be posted. There's no press conference. Everything about a short-term contract is real while it's active and deniable the moment it isn't &mdash; which is precisely the trade the long-term contract doesn't ask you to make.</p>
+
+<figure class="coh-break">
+<img src="contracts-wedding-break.jpg" alt="Silhouette of a couple exchanging vows under a tent at sunset, surrounded by guests">
+<figcaption>Article III, illustrated &mdash; the contract everyone actually wants to be offered</figcaption>
+</figure>
+
+<div class="coh-article-head">
+<span class="no">Article III</span>
+<h2>The Long-Term Contract</h2>
+</div>
+<p>This is the one most people are actually playing for, whatever their current roster looks like. The long-term contract is the prize round of the Love Olympics &mdash; the deal that trades short-term thrill for stability, and asks for the same in return. Whatever you put in, emotionally, sexually, financially, it's designed to be matched, not extracted.</p>
+<p>Players under long-term contract are, by design, the least likely to relocate. Marriage does that. Parenthood does that. You can expect to see them next weekend, and the weekend after, and the one after that, which sounds unremarkable until you remember how rare that kind of certainty actually is in this league.</p>
+<p>Society favours the long-term deal above all the others for a simple reason: it mirrors the values most functioning institutions are built on in the first place &mdash; commitment, reliability, dependence, care. It's not a coincidence that we borrow business language to describe it. A long-term contract, in love or anywhere else, is a bet that the relationship is worth more than the sum of any single transaction inside it.</p>
+
+<div class="coh-fineprint">
+<h3>The Fine Print</h3>
+<p>None of these contracts are morally ranked. A free agent hasn't failed at commitment; they simply haven't signed for it yet. A short-term contract isn't a lesser love; it's a different instrument, built for a different purpose, and most people sign at least one in their lifetime without ever naming it that clearly. The actual failure &mdash; the one that ends up on every group chat's cautionary-tale list &mdash; is signing one contract while quietly believing you're in another. Confusing a short-term deal for a long-term one is how good people get genuinely hurt, on both sides of the table.</p>
+</div>
+
+<h2 style="font-family:'Fraunces',serif;font-size:1.55rem;margin:2.6rem 0 1rem;">Closing Argument</h2>
+<p>Here's the part the metaphor doesn't want to admit: you don't actually get to choose which contract someone else is offering you. You only get to choose whether you read it, or sign blind and hope the terms match what you wanted. The free agent was never going to pretend otherwise. The short-term contract was never billed as forever. The long-term contract is the only one built to last past the season &mdash; but it's also the only one that requires both parties to actually renew it, on purpose, again and again, long after the novelty of signing has worn off.</p>
+<p>Maybe that's the whole game. Not finding the right contract, but becoming someone worth renewing.</p>
+
+<div class="coh-sign">
+<div class="field"><div class="line"></div><div class="label">Signed (Party A)</div></div>
+<div class="field"><div class="line"></div><div class="label">Signed (Party B)</div></div>
+<div class="field"><div class="line"></div><div class="label">Date</div></div>
+</div>
+
+</article>
+</main>
+</div>
+
+<footer class="sc-footer">
+<div class="wrap">
+<a href="index.html">Articles</a>
+<a href="photography.html">Photo &amp; Video</a>
+<a href="downloads.html">Downloads</a>
+<a href="trivia.html">Daily Trivia</a>
+<a href="media-kit.html">Collaborate</a>
+<a href="index.html#live-scores">Live Scores</a>
+<a href="https://instagram.com/subxculturex" target="_blank" rel="noopener">Instagram</a>
+<a href="https://tiktok.com/@subxculturex" target="_blank" rel="noopener">TikTok</a>
+</div>
+</footer>
+
+<script src="script.js"></script>
+<script data-goatcounter="https://subculture.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script src="player.js"></script>
+<script src="chatbot-widget.js"></script>
+</body>
+</html>
