@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taded Is Inevitable — Sub Culture</title>
+<meta name="description" content="Taded Is Inevitable — from Tsakane to the next wave of South African hip-hop. A Sub Culture feature.">
+<style>
+:root{
+  --ink:#111;
+  --paper:#eee9df;
+  --cream:#f6f2e9;
+  --red:#d71920;
+  --muted:#777168;
+  --line:rgba(17,17,17,.18);
+  --shadow:0 20px 60px rgba(0,0,0,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(215,25,32,.08), transparent 24rem),
+    radial-gradient(circle at 85% 75%, rgba(0,0,0,.08), transparent 28rem),
+    var(--paper);
+  font-family:Arial, Helvetica, sans-serif;
+}
+body:before{
+  content:"";
+  position:fixed; inset:0; pointer-events:none; z-index:20;
+  opacity:.11;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(0,0,0,.25) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(90deg, rgba(0,0,0,.14) 0 1px, transparent 1px 7px);
+  mix-blend-mode:multiply;
+}
+a{color:inherit}
+.sitebar{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:22px 5vw;
+  border-bottom:1px solid var(--line);
+  text-transform:uppercase; letter-spacing:.12em; font-size:11px;
+}
+.logo{font-weight:900; font-size:18px; letter-spacing:-.05em}
+.logo span{color:var(--red)}
+.issue{color:var(--muted)}
+.hero{
+  min-height:92vh;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  align-items:end;
+  gap:5vw;
+  padding:7vw 6vw 5vw;
+  position:relative;
+  overflow:hidden;
+}
+.hero:after{
+  content:"TADED";
+  position:absolute;
+  right:-2vw; bottom:-5vw;
+  font-size:clamp(120px,22vw,340px);
+  line-height:.75;
+  font-weight:1000;
+  letter-spacing:-.08em;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(17,17,17,.13);
+  pointer-events:none;
+}
+.kicker{
+  display:inline-flex; align-items:center; gap:10px;
+  font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.18em;
+}
+.kicker:before{content:""; width:42px; height:3px; background:var(--red)}
+h1{
+  font-size:clamp(64px,10.5vw,170px);
+  line-height:.78;
+  letter-spacing:-.075em;
+  margin:24px 0 30px;
+  max-width:900px;
+  position:relative; z-index:2;
+}
+h1 em{
+  display:block;
+  font-family:Georgia,serif;
+  font-weight:400;
+  font-size:.45em;
+  line-height:1.05;
+  letter-spacing:-.04em;
+  margin-left:.08em;
+  transform:rotate(-2deg);
+}
+.deck{
+  max-width:620px;
+  font-family:Georgia,serif;
+  font-size:clamp(20px,2.2vw,31px);
+  line-height:1.25;
+  position:relative; z-index:2;
+}
+.hero-media{
+  position:relative; z-index:2;
+  transform:rotate(1.5deg);
+}
+.hero-media img{
+  width:100%; display:block;
+  filter:contrast(1.03) saturate(.92);
+  box-shadow:var(--shadow);
+}
+.caption{
+  display:flex; justify-content:space-between; gap:20px;
+  font-size:10px; text-transform:uppercase; letter-spacing:.13em;
+  margin-top:12px; color:var(--muted);
+}
+.tape{
+  position:absolute; width:120px; height:30px;
+  background:rgba(225,210,165,.75);
+  top:-15px; left:40%; transform:rotate(-4deg);
+  z-index:4;
+}
+.diary{
+  max-width:1180px; margin:auto;
+  padding:4vw 6vw 10vw;
+}
+.rule{
+  border-top:2px solid var(--ink);
+  padding-top:13px; margin:0 0 70px;
+  display:flex; justify-content:space-between;
+  font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.14em;
+}
+.entry{
+  display:grid;
+  grid-template-columns:160px minmax(0,760px);
+  gap:50px;
+  margin-bottom:100px;
+}
+.entry-num{
+  font-size:12px; font-weight:900; letter-spacing:.15em;
+  color:var(--red); padding-top:8px;
+}
+.entry h2{
+  font-size:clamp(42px,6vw,88px);
+  line-height:.86;
+  letter-spacing:-.065em;
+  margin:0 0 28px;
+  text-transform:uppercase;
+}
+.entry p{
+  font-family:Georgia,serif;
+  font-size:20px;
+  line-height:1.65;
+  margin:0 0 24px;
+}
+.dropcap:first-letter{
+  float:left;
+  font-family:Arial,sans-serif;
+  font-weight:1000;
+  font-size:100px;
+  line-height:.78;
+  padding:9px 12px 0 0;
+  color:var(--red);
+}
+.pull{
+  margin:55px 0;
+  padding:30px 0 30px 35px;
+  border-left:7px solid var(--red);
+  font-size:clamp(30px,4vw,55px);
+  line-height:1;
+  letter-spacing:-.045em;
+  font-weight:900;
+  text-transform:uppercase;
+}
+.note{
+  background:#171717;
+  color:#f2eee4;
+  padding:55px;
+  margin:40px 0 110px;
+  transform:rotate(-1deg);
+  box-shadow:var(--shadow);
+}
+.note h3{margin:0 0 15px; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:#aaa}
+.note p{font-size:clamp(28px,4vw,54px); line-height:1.02; letter-spacing:-.04em; margin:0; font-weight:900}
+.game{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px; align-items:stretch;
+  margin:50px 0 100px;
+}
+.game-card{
+  background:var(--red); color:#fff;
+  padding:45px;
+  min-height:320px;
+  display:flex; flex-direction:column; justify-content:space-between;
+}
+.game-card h3{font-size:52px; line-height:.9; letter-spacing:-.06em; margin:0}
+.game-card a{
+  display:inline-block; width:max-content;
+  background:#fff; color:#111; padding:15px 20px;
+  text-decoration:none; font-weight:900; text-transform:uppercase; letter-spacing:.08em; font-size:11px;
+}
+.scrap{
+  background:#d8d1c3;
+  padding:45px;
+  transform:rotate(2deg);
+  border:1px solid rgba(0,0,0,.15);
+}
+.scrap p{font-family:"Courier New",monospace; font-size:17px; line-height:1.6; margin:0}
+.final{
+  min-height:80vh;
+  display:flex; flex-direction:column; justify-content:center;
+  text-align:center;
+  padding:10vw 6vw;
+  background:#111; color:#eee9df;
+  position:relative; overflow:hidden;
+}
+.final:before{
+  content:"INEVITABLE";
+  position:absolute; inset:auto -5vw -7vw;
+  font-size:clamp(100px,20vw,300px);
+  line-height:.8; font-weight:1000; letter-spacing:-.08em;
+  color:#1d1d1d;
+}
+.final .kicker{justify-content:center; position:relative}
+.final h2{
+  position:relative;
+  font-size:clamp(70px,14vw,210px);
+  line-height:.75;
+  letter-spacing:-.08em;
+  margin:35px 0;
+}
+.final p{
+  position:relative;
+  max-width:700px; margin:auto;
+  font-family:Georgia,serif; font-size:23px; line-height:1.5;
+}
+.links{
+  position:relative; display:flex; justify-content:center; flex-wrap:wrap;
+  gap:12px; margin-top:35px;
+}
+.links a{
+  color:#111; background:#eee9df; text-decoration:none;
+  padding:14px 20px; font-size:11px; font-weight:900;
+  text-transform:uppercase; letter-spacing:.1em;
+}
+footer{
+  background:#111; color:#777; padding:25px 6vw;
+  border-top:1px solid #333; font-size:10px;
+  display:flex; justify-content:space-between; text-transform:uppercase; letter-spacing:.12em;
+}
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr; min-height:auto; padding-top:18vw}
+  .hero-media{max-width:620px; margin:20px auto 0}
+  .entry{grid-template-columns:1fr; gap:12px}
+  .entry-num{padding:0}
+  .game{grid-template-columns:1fr}
+  .note{padding:32px}
+  .sitebar{padding:18px 5vw}
+}
+</style>
+</head>
+<body>
+
+<header class="sitebar">
+  <div class="logo">SUB<span>•</span>CULTURE</div>
+  <div class="issue">Feature / 23.10.26</div>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <div class="kicker">South African Hip-Hop / Tsakane</div>
+    <h1>TADED <em>is inevitable.</em></h1>
+    <p class="deck">From Tsakane to the next wave of South African hip-hop. This is not the finished story. It is the introduction.</p>
+  </div>
+
+  <figure class="hero-media">
+    <div class="tape"></div>
+    <img src="taded-hero.jpg" alt="Taded seated in a formal black robe, looking off-frame">
+    <figcaption class="caption">
+      <span>Sub Culture / Artist Study</span>
+      <span>01 — 2026</span>
+    </figcaption>
+  </figure>
+</section>
+
+<article class="diary">
+  <div class="rule"><span>Field Notes</span><span>Entry 01 / 06</span></div>
+
+  <section class="entry">
+    <div class="entry-num">01 / THE INTRODUCTION</div>
+    <div>
+      <h2>The beginning</h2>
+      <p class="dropcap">Music is ever-evolving, a wave with its crests and troughs. Taded is an upcoming artist hailing from Tsakane in the East Rand of Johannesburg. His musical journey started at the age of 15, when his cousin, Gauta, inspired him to start working on his own musical journey.</p>
+      <p>Taded is currently under the WOF team, which handles his PR and marketing and will be heavily prominent on a special project dropping on 1 November 2026 — his birthday.</p>
+      <p>“It’s three tracks in addition to a game called Making Out Mashona, Out the Hood,” he tells us on his very first — and hopefully first of many — interviews for Sub Culture.</p>
+    </div>
+  </section>
+
+  <div class="pull">Not a manifesto. Not a finished statement. Just an artist building.</div>
+
+  <section class="entry">
+    <div class="entry-num">02 / STRAIGHT OUTTA MASHONA</div>
+    <div>
+      <h2>Play the story</h2>
+      <p>And that’s the introduction. A little bit of straight hip-hop, trap and something for the ladies. His versatility and skill are evident from what we’ve heard.</p>
+      <p>Taded has worked with Samoht, Veena and Brandon Ollifant, to name a few of his early collaborators.</p>
+      <p>There is also something important in the way Taded has introduced himself to the current South African hip-hop scene: as a MoSotho rapper from Tsakane.</p>
+    </div>
+  </section>
+
+  <section class="game">
+    <div class="game-card">
+      <div>
+        <h3>STRAIGHT<br>OUTTA<br>MASHONA</h3>
+      </div>
+      <a href="https://straight-outta-mashona.intelligentgames.workers.dev/" target="_blank" rel="noopener">Enter the game ↗</a>
+    </div>
+    <div class="scrap">
+      <p>NOTE TO SELF:</p>
+      <br>
+      <p>A simple description can place an artist somewhere. It tells you where the story begins. And perhaps that’s what makes the next chapter interesting.</p>
+    </div>
+  </section>
+
+  <section class="entry">
+    <div class="entry-num">03 / THE GIFT</div>
+    <div>
+      <h2>Remember who was there</h2>
+      <p>Taded isn’t only thinking about the people who haven’t discovered him yet. He’s thinking about the people who already have.</p>
+      <div class="pull">Growth isn't simply about getting more listeners. It's about keeping the ones who were there before the numbers started changing.</div>
+      <p>“My next project is going to reflect where I currently am since the beginning, hence the ‘gift’ for long-term listeners of mine,” he tells us.</p>
+      <p>“I’m looking to grow my platform and I want to be mindful of every listener that I’ve already gained, and I will also fight to grab the ears of new listeners, wherever they are.”</p>
+    </div>
+  </section>
+
+  <section class="entry">
+    <div class="entry-num">04 / RELATIONSHIPS</div>
+    <div>
+      <h2>Before the music</h2>
+      <p>With regard to his creative process, Taded tells us that he builds relationships, often converting a business agreement into a successful friendship.</p>
+      <p>One example is his current relationship with producers Juke &amp; Jupiter.</p>
+      <div class="note">
+        <h3>From the conversation</h3>
+        <p>“We’ve been friends for the longest time. We were in the same primary school and rugby team.”</p>
+      </div>
+      <p>The connection existed before the music. Before the studio sessions and the releases, there was already a shared history.</p>
+      <p>In an industry where creative relationships can sometimes become purely transactional, there is something to be said for working with people you’ve known long before the music became the reason to speak.</p>
+    </div>
+  </section>
+
+  <section class="entry">
+    <div class="entry-num">05 / TADEVEMBER</div>
+    <div>
+      <h2>November is coming</h2>
+      <p>Then there’s Tadevember.</p>
+      <p>That’s the working title for the coming November, when Taded plans to release his long-awaited surprise project.</p>
+      <p>A years-long project was shelved so that Taded could fully focus himself on this upcoming project, which he began working on this past August.</p>
+      <p>It’s a short turnaround.</p>
+      <p><strong>And that’s precisely what makes it worth watching.</strong></p>
+      <p>The project represents another point in the journey — one where the ideas, relationships and experiences accumulated over time have to become something tangible.</p>
+    </div>
+  </section>
+
+  <section class="entry">
+    <div class="entry-num">06 / THE NEXT WAVE</div>
+    <div>
+      <h2>Still becoming</h2>
+      <p>There is no shortage of artists trying to find their place in South African hip-hop.</p>
+      <p>What separates one story from another isn’t always talent. Sometimes it’s timing. Sometimes it’s relationships. Sometimes it’s persistence. Sometimes it’s simply having something to say and continuing to say it.</p>
+      <p>Taded is still at the beginning.</p>
+      <p>That’s important to remember.</p>
+      <p>This isn’t the finished story. It’s the introduction.</p>
+      <p>From starting his musical journey at 15 after being inspired by his cousin Gauta, to developing relationships with collaborators, to preparing a project that will arrive on his birthday, the pieces are beginning to form.</p>
+    </div>
+  </section>
+</article>
+
+<section class="final">
+  <div class="kicker">Sub Culture / Artist Feature</div>
+  <h2>TADED<br>IS INEVITABLE.</h2>
+  <p>You don’t become inevitable by announcing it. You become inevitable by continuing to show up.</p>
+  <div class="links">
+    <a href="https://straight-outta-mashona.intelligentgames.workers.dev/" target="_blank" rel="noopener">Straight Outta Mashona ↗</a>
+    <a href="https://open.spotify.com/artist/1AmSJl0QnOKPnJTCerXb4o?si=jh_df_RoQcCPYTzZXnyzDQ" target="_blank" rel="noopener">Taded on Spotify ↗</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span>SUB CULTURE</span>
+  <span>Articles / Photography / Videography / Culture</span>
+</footer>
+
+</body>
+</html>
