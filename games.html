@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Games | Sub Culture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#DCDCD6;--ink:#1C1B3A;--paper:#F7F7F2;--pink:#FF2E88}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:16px 12px 28px}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+header,main{width:100%;max-width:540px}
+header{display:flex;justify-content:space-between;align-items:baseline;border-bottom:4px solid var(--ink);padding-bottom:8px;margin-bottom:18px}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(2.4rem,9vw,3.4rem);line-height:1;margin:0}
+header a{color:var(--ink);font-weight:700;font-size:.95rem}
+.game{display:block;text-decoration:none;color:var(--ink);background:var(--paper);border:3px solid var(--ink);padding:18px;margin-bottom:14px}
+.game:hover{background:var(--ink);color:var(--paper)}
+.game h2{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:2rem;margin:0 0 4px}
+.game p{margin:0;line-height:1.4}
+</style>
+</head>
+<body>
+<header>
+  <h1>Games</h1>
+  <a href="index.html">Back to Sub Culture</a>
+</header>
+<main>
+  <a class="game" href="word.html">
+    <h2>Word Drop</h2>
+    <p>Guess the five-letter word in six tries. A new word every day.</p>
+  </a>
+  <a class="game" href="ludo.html">
+    <h2>Ludo</h2>
+    <p>Race your four tokens home. Play 2 to 4 players, or take on the computer.</p>
+  </a>
+</main>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ludo | Sub Culture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#DCDCD6;--ink:#1C1B3A;--paper:#F7F7F2;--line:#B4B4AB;--pink:#FF2E88;--c0:#FF2E88;--c1:#1FA35C;--c2:#FFB400;--c3:#2F5BFF}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:16px 12px 28px}
+a{color:var(--ink)}
+:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
+header{width:100%;max-width:540px;display:flex;justify-content:space-between;align-items:baseline;border-bottom:4px solid var(--ink);padding-bottom:8px;margin-bottom:14px}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(2.4rem,9vw,3.4rem);line-height:1;margin:0}
+header a{font-weight:700;font-size:.95rem}
+#setup{width:100%;max-width:540px}
+#setup p{line-height:1.45;margin:0 0 14px}
+label{display:block;font-weight:700;margin-bottom:12px}
+select{display:block;width:100%;margin-top:4px;font:600 1rem "DM Sans",sans-serif;padding:10px;border:2px solid var(--ink);background:var(--paper);color:var(--ink)}
+button.main{font:700 1rem "DM Sans",sans-serif;padding:11px 20px;border:2px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer}
+button.main:disabled{opacity:.4;cursor:default}
+button.alt{background:transparent;color:var(--ink)}
+#game{width:100%;max-width:540px}
+#bw{position:relative;width:100%;aspect-ratio:1;background:var(--paper);border:4px solid var(--ink)}
+#bw>*{position:absolute}
+.base{border:1px solid var(--ink)}
+.inner{background:var(--paper);border:1px solid var(--ink)}
+.slot{border:3px solid;border-radius:50%;transform:scale(.82)}
+.cell{background:var(--paper);border:1px solid var(--line);display:grid;place-items:center;font-size:clamp(.6rem,2.8vw,1.1rem);line-height:1;color:#7A7A86}
+.center{background:conic-gradient(from 45deg,var(--c2) 0 90deg,var(--c3) 90deg 180deg,var(--c0) 180deg 270deg,var(--c1) 270deg 360deg);border:1px solid var(--ink)}
+.tok{border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--ink);padding:0;transform:translate(-50%,-50%);transition:left .14s linear,top .14s linear;cursor:default}
+.tok:not(:disabled){cursor:pointer;box-shadow:0 0 0 3px var(--ink),0 0 0 6px #fff;z-index:5}
+.tok:disabled{opacity:1}
+.panel{display:flex;align-items:center;gap:14px;margin-top:14px}
+#die{width:64px;height:64px;flex:none;display:grid;place-items:center;background:var(--paper);border:4px solid var(--ink);font:400 2.4rem Anton,Impact,sans-serif}
+#msg{margin:0;font-weight:700;line-height:1.35;min-height:2.7em}
+.btns{display:flex;gap:10px;margin-top:12px}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){.tok{transition:none}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Ludo</h1>
+  <a href="games.html">All games</a>
+</header>
+
+<section id="setup">
+  <p>Roll a 6 to leave your base. Land on another player’s token to send it home, unless it’s on a starred or coloured square. Get all four tokens to the centre to win. You need the exact number to finish. A 6, a capture or a token reaching the centre gives you another roll.</p>
+  <label>Players
+    <select id="np"><option value="2">2 players</option><option value="3">3 players</option><option value="4" selected>4 players</option></select>
+  </label>
+  <label>Mode
+    <select id="mode"><option value="cpu">Me vs computer</option><option value="pass">Pass and play (share one screen)</option></select>
+  </label>
+  <button class="main" id="start">Start game</button>
+</section>
+
+<section id="game" hidden>
+  <div id="bw" aria-label="Ludo board"></div>
+  <div class="panel">
+    <div id="die" aria-label="Dice"></div>
+    <p id="msg" role="status" aria-live="polite"></p>
+  </div>
+  <div class="btns">
+    <button class="main" id="roll">Roll dice</button>
+    <button class="main alt" id="newg">New game</button>
+  </div>
+</section>
+
+<script>
+const $=id=>document.getElementById(id);
+const NAMES=["Pink","Green","Gold","Blue"],START=[0,13,26,39],SAFE=new Set([0,13,26,39,8,21,34,47]);
+const ORG=[[0,0],[0,9],[9,9],[9,0]],SL=[[2,2],[4,2],[2,4],[4,4]],FIN=[[6.55,7.5],[7.5,6.55],[8.45,7.5],[7.5,8.45]];
+const LOOP=[],add=(r,c)=>LOOP.push([r,c]);
+for(let c=1;c<=5;c++)add(6,c);
+for(let r=5;r>=0;r--)add(r,6);
+add(0,7);add(0,8);
+for(let r=1;r<=5;r++)add(r,8);
+for(let c=9;c<=14;c++)add(6,c);
+add(7,14);add(8,14);
+for(let c=13;c>=9;c--)add(8,c);
+for(let r=9;r<=14;r++)add(r,8);
+add(14,7);add(14,6);
+for(let r=13;r>=9;r--)add(r,6);
+for(let c=5;c>=0;c--)add(8,c);
+add(7,0);add(6,0);
+const HOME=[[1,2,3,4,5].map(c=>[7,c]),[1,2,3,4,5].map(r=>[r,7]),[13,12,11,10,9].map(c=>[7,c]),[13,12,11,10,9].map(r=>[r,7])];
+
+const bw=$("bw");
+function mk(cls,x,y,w,h){const d=document.createElement("div");d.className=cls;
+  d.style.left=x/15*100+"%";d.style.top=y/15*100+"%";d.style.width=w/15*100+"%";d.style.height=h/15*100+"%";bw.appendChild(d);return d;}
+ORG.forEach((o,s)=>{
+  mk("base",o[1],o[0],6,6).style.background="var(--c"+s+")";
+  mk("inner",o[1]+1,o[0]+1,4,4);
+  SL.forEach(q=>mk("slot",o[1]+q[0]-.6,o[0]+q[1]-.6,1.2,1.2).style.borderColor="var(--c"+s+")");
+});
+LOOP.forEach(([r,c],i)=>{const d=mk("cell",c,r,1,1),s=START.indexOf(i);
+  if(s>=0)d.style.background="color-mix(in srgb,var(--c"+s+") 60%,white)";else if(SAFE.has(i))d.textContent="★";});
+HOME.forEach((h,s)=>h.forEach(([r,c])=>mk("cell",c,r,1,1).style.background="color-mix(in srgb,var(--c"+s+") 75%,white)"));
+mk("center",6,6,3,3);
+const tok=[0,1,2,3].map(s=>[0,1,2,3].map(t=>{
+  const b=document.createElement("button");b.className="tok";b.style.background="var(--c"+s+")";
+  b.style.width=b.style.height=.78/15*100+"%";b.setAttribute("aria-label",NAMES[s]+" token "+(t+1));
+  b.addEventListener("click",()=>pick(s,t));bw.appendChild(b);return b;}));
+
+let seats=[],human=[],turn=0,P=[],dice=0,phase="idle",moves=[],gid=0;
+function later(fn,ms){const g=gid;setTimeout(()=>{if(g===gid)fn();},ms);}
+function say(t){$("msg").textContent=t;}
+
+function xy(s,t){const p=P[s][t];
+  if(p<0){const o=ORG[s],q=SL[t];return [o[1]+q[0],o[0]+q[1]];}
+  if(p<=50){const [r,c]=LOOP[(START[s]+p)%52];return [c+.5,r+.5];}
+  if(p<56){const [r,c]=HOME[s][p-51];return [c+.5,r+.5];}
+  const f=FIN[s],d=(t-1.5)*.2;return s%2?[f[0]+d,f[1]]:[f[0],f[1]+d];}
+
+function render(){const g={};
+  seats.forEach(s=>P[s].forEach((_,t)=>{const [x,y]=xy(s,t),k=x+","+y;(g[k]=g[k]||[]).push([s,t,x,y]);}));
+  Object.values(g).forEach(a=>a.forEach(([s,t,x,y],i)=>{
+    const o=a.length>1?(i-(a.length-1)/2)*.32:0,b=tok[s][t];
+    b.style.left=(x+o)/15*100+"%";b.style.top=y/15*100+"%";
+    b.disabled=!(phase==="pick"&&seats[turn]===s&&moves.includes(t));}));}
+
+function begin(){
+  gid++;const n=+$("np").value,cpu=$("mode").value==="cpu";
+  seats=n===2?[0,2]:n===3?[0,1,2]:[0,1,2,3];
+  human=seats.map((s,i)=>!cpu||i===0);
+  P=[0,1,2,3].map(()=>[-1,-1,-1,-1]);turn=0;
+  tok.forEach((row,s)=>row.forEach(b=>b.hidden=!seats.includes(s)));
+  $("setup").hidden=true;$("game").hidden=false;startTurn();}
+
+function startTurn(){phase="roll";const s=seats[turn];
+  $("die").textContent="";$("die").style.borderColor="var(--c"+s+")";
+  $("roll").disabled=!human[turn];
+  say(NAMES[s]+(human[turn]?": your turn. Roll the dice.":" (computer) is rolling…"));
+  render();if(!human[turn])later(roll,800);}
+
+function can(s,t){const p=P[s][t];return p<0?dice===6:p+dice<=56;}
+
+function roll(){if(phase!=="roll")return;phase="busy";$("roll").disabled=true;
+  dice=1+Math.floor(Math.random()*6);$("die").textContent=dice;
+  const s=seats[turn];moves=[0,1,2,3].filter(t=>can(s,t));
+  if(!moves.length){say(NAMES[s]+" rolled "+dice+". No move available.");render();return later(()=>next(false),1200);}
+  if(human[turn]){phase="pick";say(NAMES[s]+" rolled "+dice+". Pick a token to move.");render();}
+  else{say(NAMES[s]+" rolled "+dice+".");later(()=>go(cpuPick(s)),900);}}
+
+function pick(s,t){if(phase==="pick"&&s===seats[turn]&&moves.includes(t))go(t);}
+
+function go(t){phase="busy";moves=[];const s=seats[turn];
+  if(P[s][t]<0){P[s][t]=0;render();return later(()=>land(s,t),450);}
+  render();let left=dice;
+  const g=gid,iv=setInterval(()=>{
+    if(g!==gid)return clearInterval(iv);
+    P[s][t]++;left--;render();
+    if(!left){clearInterval(iv);later(()=>land(s,t),260);}},150);}
+
+function land(s,t){let cap=false;const p=P[s][t];
+  if(p<=50){const a=(START[s]+p)%52;
+    if(!SAFE.has(a))seats.forEach(o=>{if(o!==s)P[o].forEach((q,i)=>{
+      if(q>=0&&q<=50&&(START[o]+q)%52===a){P[o][i]=-1;cap=true;}});});}
+  render();
+  if(P[s].every(q=>q===56)){phase="over";say(NAMES[s]+" wins! 🎉");$("roll").disabled=true;return;}
+  const extra=dice===6||cap||p===56;
+  if(cap)say(NAMES[s]+" sent a token home!");else if(p===56)say("A token reached the centre!");
+  later(()=>next(extra),cap||p===56?1000:450);}
+
+function next(extra){if(!extra)turn=(turn+1)%seats.length;startTurn();}
+
+function cpuPick(s){let best=moves[0],bs=-1;
+  moves.forEach(t=>{const p=P[s][t],n=p<0?0:p+dice;let sc=n/10+Math.random();
+    if(n<=50){const a=(START[s]+n)%52;
+      if(SAFE.has(a))sc+=15;
+      else if(seats.some(o=>o!==s&&P[o].some(q=>q>=0&&q<=50&&(START[o]+q)%52===a)))sc+=100;}
+    if(n===56)sc+=80;else if(n>50)sc+=30;
+    if(p<0)sc+=60;
+    if(sc>bs){bs=sc;best=t;}});
+  return best;}
+
+$("start").addEventListener("click",begin);
+$("roll").addEventListener("click",roll);
+$("newg").addEventListener("click",()=>{gid++;phase="idle";$("game").hidden=true;$("setup").hidden=false;});
+</script>
+</body>
+</html>
