@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Word Drop | Sub Culture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#DCDCD6;--ink:#1C1B3A;--paper:#F7F7F2;--hit:#2F5BFF;--near:#FFB400;--miss:#6B6B7A;--line:#B4B4AB;--pink:#FF2E88}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:16px 12px 28px}
+a{color:var(--ink)}
+:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
+header{width:100%;max-width:440px;display:flex;justify-content:space-between;align-items:baseline;border-bottom:4px solid var(--ink);padding-bottom:8px}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(2.4rem,9vw,3.4rem);line-height:1;margin:0;letter-spacing:.01em}
+header a{font-weight:700;font-size:.95rem}
+.sub{max-width:440px;width:100%;margin:10px 0 14px;font-size:.98rem;line-height:1.45}
+#board{display:grid;gap:6px;width:100%;max-width:340px;margin:0 auto 12px}
+.row{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.tile{aspect-ratio:1;display:grid;place-items:center;background:var(--paper);border:2px solid var(--line);font-family:Anton,Impact,sans-serif;font-size:clamp(1.7rem,8vw,2.3rem);text-transform:uppercase}
+.tile.filled{border-color:var(--ink)}
+.tile.hit,.tile.near,.tile.miss{border-color:transparent;animation:flip .45s ease both}
+.tile.hit{background:var(--hit);color:#fff}
+.tile.near{background:var(--near);color:var(--ink)}
+.tile.miss{background:var(--miss);color:#fff}
+.row.shake{animation:shake .4s}
+@keyframes flip{0%{transform:rotateX(0)}50%{transform:rotateX(90deg)}100%{transform:rotateX(0)}}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+#msg{min-height:1.6em;font-weight:700;text-align:center;margin:0 0 8px}
+#kb{width:100%;max-width:480px;display:grid;gap:6px}
+.kr{display:flex;justify-content:center;gap:5px}
+.key{flex:1;max-width:44px;height:52px;border:0;background:var(--paper);color:var(--ink);font:700 .95rem "DM Sans",sans-serif;text-transform:uppercase;cursor:pointer;border-radius:4px;box-shadow:0 2px 0 var(--line)}
+.key.wide{max-width:68px;font-size:.78rem}
+.key.hit{background:var(--hit);color:#fff}
+.key.near{background:var(--near)}
+.key.miss{background:var(--miss);color:#fff}
+.actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+.actions button{font:700 1rem "DM Sans",sans-serif;padding:11px 18px;border:2px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer}
+.actions button.alt{background:transparent;color:var(--ink)}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){.tile.hit,.tile.near,.tile.miss,.row.shake{animation:none}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Word Drop</h1>
+  <a href="index.html">Back to Sub Culture</a>
+</header>
+<p class="sub">Guess the five-letter word in six tries. Blue means right letter, right spot. Yellow means right letter, wrong spot. Grey means the letter isn’t in the word. The daily word changes at midnight.</p>
+
+<div id="board" aria-label="Game board"></div>
+<p id="msg" role="status" aria-live="polite"></p>
+<div id="kb" aria-label="On-screen keyboard"></div>
+<div class="actions" id="end" hidden>
+  <button id="share">Copy result</button>
+  <button id="again" class="alt">Play a random word</button>
+</div>
+
+<script>
+// Add or remove words here. Keep every word at exactly 5 letters.
+const WORDS = ("DENIM STYLE TREND SNEAK SHADE CHAIN PRINT LAYER FLARE PLAID TWEED LINEN SUEDE CLOTH BADGE BELTS BOOTS SHOES SOCKS SCARF GLOVE SHIRT SKIRT DRESS JEANS CARGO CREWS FRESH CLEAN DRIPS VIBES BEATS RHYME TEMPO SOUND MIXES DANCE CROWD STAGE MUSIC TRACK ALBUM LYRIC VOCAL CHORD PIANO DRUMS FLASH FRAME SHOOT FOCUS SHOTS PIXEL EDITS VIDEO MODEL POSES LIGHT ANGLE CLIPS REELS STORY BLOGS WRITE MEDIA ISSUE COVER PAGES QUOTE TITLE PRESS POSTS LIKES TRIBE").split(" ");
+const LEN = 5, MAX = 6;
+const board = document.getElementById("board"), msg = document.getElementById("msg"),
+      kb = document.getElementById("kb"), end = document.getElementById("end");
+let answer, row, col, over, busy, keyState, results;
+
+function dayIndex(){const d=new Date();return Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/864e5);}
+function tile(r,c){return board.children[r].children[c];}
+
+function buildBoard(){
+  board.innerHTML="";
+  for(let r=0;r<MAX;r++){
+    const d=document.createElement("div");d.className="row";
+    for(let c=0;c<LEN;c++){d.appendChild(document.createElement("div")).className="tile";}
+    board.appendChild(d);
+  }
+}
+function buildKeys(){
+  kb.innerHTML="";
+  ["QWERTYUIOP","ASDFGHJKL","ENTER ZXCVBNM BACK"].forEach(line=>{
+    const r=document.createElement("div");r.className="kr";
+    const keys=line.includes(" ")?line.split(" ").flatMap(p=>p.length>1?[p]:p.split("")):line.split("");
+    keys.forEach(k=>{
+      const b=document.createElement("button");
+      b.className="key"+(k.length>1?" wide":"");
+      b.dataset.k=k;b.textContent=k==="BACK"?"Delete":k==="ENTER"?"Enter":k;
+      b.addEventListener("click",()=>press(k));
+      r.appendChild(b);
+    });
+    kb.appendChild(r);
+  });
+}
+
+function start(random){
+  answer = random ? WORDS[Math.floor(Math.random()*WORDS.length)] : WORDS[dayIndex()%WORDS.length];
+  row=0;col=0;over=false;busy=false;keyState={};results=[];
+  msg.textContent="";end.hidden=true;
+  buildBoard();buildKeys();
+}
+
+function say(t){msg.textContent=t;}
+
+function press(k){
+  if(over||busy)return;
+  if(k==="ENTER")return submit();
+  if(k==="BACK"){if(col>0){col--;const t=tile(row,col);t.textContent="";t.classList.remove("filled");}return;}
+  if(/^[A-Z]$/.test(k)&&col<LEN){const t=tile(row,col);t.textContent=k;t.classList.add("filled");col++;}
+}
+
+function score(g,a){
+  const r=Array(LEN).fill("miss"),left={};
+  for(let i=0;i<LEN;i++){if(g[i]===a[i])r[i]="hit";else left[a[i]]=(left[a[i]]||0)+1;}
+  for(let i=0;i<LEN;i++){if(r[i]!=="hit"&&left[g[i]]>0){r[i]="near";left[g[i]]--;}}
+  return r;
+}
+
+function submit(){
+  if(col<LEN){
+    const el=board.children[row];el.classList.remove("shake");void el.offsetWidth;el.classList.add("shake");
+    say("Enter all five letters first.");return;
+  }
+  const guess=[...board.children[row].children].map(t=>t.textContent).join("");
+  const res=score(guess,answer);
+  results.push(res);busy=true;say("");
+  const rank={miss:1,near:2,hit:3},cur=row;
+  res.forEach((s,i)=>setTimeout(()=>{
+    const t=tile(cur,i);t.classList.add(s);
+    const k=kb.querySelector('[data-k="'+guess[i]+'"]');
+    if(k&&(!keyState[guess[i]]||rank[s]>rank[keyState[guess[i]]])){
+      keyState[guess[i]]=s;k.classList.remove("miss","near","hit");k.classList.add(s);
+    }
+  },i*250));
+  setTimeout(()=>{
+    busy=false;
+    if(guess===answer){over=true;say("Nice one. Solved in "+(cur+1)+" of "+MAX+".");end.hidden=false;}
+    else if(cur===MAX-1){over=true;say("Out of tries. The word was "+answer+".");end.hidden=false;}
+    else{row++;col=0;}
+  },LEN*250+200);
+}
+
+document.addEventListener("keydown",e=>{
+  if(e.ctrlKey||e.metaKey||e.altKey)return;
+  if(e.key==="Enter"){if(document.activeElement.tagName==="BUTTON")return;e.preventDefault();press("ENTER");}
+  else if(e.key==="Backspace")press("BACK");
+  else if(/^[a-zA-Z]$/.test(e.key))press(e.key.toUpperCase());
+});
+
+document.getElementById("again").addEventListener("click",()=>start(true));
+document.getElementById("share").addEventListener("click",async()=>{
+  const icons={hit:"🟦",near:"🟨",miss:"⬛"};
+  const won=results.length&&results[results.length-1].every(s=>s==="hit");
+  const text="Word Drop | Sub Culture\n"+(won?results.length:"X")+"/"+MAX+"\n"+results.map(r=>r.map(s=>icons[s]).join("")).join("\n")+"\n"+location.href;
+  try{await navigator.clipboard.writeText(text);say("Result copied. Paste it anywhere.");}
+  catch(err){say("Couldn’t copy. Select and copy the result manually.");}
+});
+
+start(false);
+</script>
+</body>
+</html>
