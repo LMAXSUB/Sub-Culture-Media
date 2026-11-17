@@ -1,302 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Money Talk: What Accountants Actually Earn in SA | Sub Culture</title>
-<meta name="description" content="From newly qualified CA(SA) to CFO, and how government pay compares — what accountants earn in South Africa, with every figure sourced and its limits flagged.">
-<link rel="canonical" href="https://subxculturex.com/money-talk-accountants.html">
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="Sub Culture">
-<meta property="og:title" content="The Money Talk: What Accountants Actually Earn in SA">
-<meta property="og:description" content="From newly qualified CA(SA) to CFO — what accountants earn in South Africa, sourced and compared.">
-<meta property="og:url" content="https://subxculturex.com/money-talk-accountants.html">
-<meta property="og:image" content="https://subxculturex.com/acct-hero.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Money Talk: What Accountants Actually Earn in SA">
-<meta name="twitter:description" content="From newly qualified CA(SA) to CFO — what accountants earn in South Africa.">
-<meta name="twitter:image" content="https://subxculturex.com/acct-hero.jpg">
-<link rel="icon" type="image/svg+xml" href="logo.svg">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Money Talk: The Account of Accountants | Sub Culture</title>
+<link rel="icon" type="image/png" href="sc-favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Space+Mono:wght@400;500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
+/* Palette sampled from the Sub Culture logo: black and warm cream */
 :root{
-  --bg:#faf5ea; --ink:#1c1a15; --sub:#6b6353; --card:#ffffff; --line:#e7e0ce;
+  --ink:#000; --panel:#121110; --bone:#f0e9de; --gold:#f0e9de; --grey:#8b857a; --mute:#9a9487;
+  --tone:grayscale(1) contrast(1.05); /* set to none to show the photos in colour */
+  --display:"Bodoni Moda",Didot,"Bodoni 72","Playfair Display",Georgia,serif;
+  --text:"Source Serif 4",Georgia,serif;
 }
-body{margin:0;background:var(--bg);color:var(--ink);font-family:'Work Sans',sans-serif;}
-#mt .wrap{max-width:820px;margin:0 auto;padding:0 24px;}
+.mast a,.presents,h1,.sub,h2,h3,.val,.big .n,.tier dd,.road li::before{font-weight:700}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--bone);font:19px/1.65 var(--text)}
+a{color:var(--gold)}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px}
 
-.sc-nav{background:#111;}
-.sc-nav .wrap{max-width:1100px;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;flex-wrap:wrap;gap:.75rem;}
-.sc-nav a.brand img{height:26px;}
-.sc-nav ul{display:flex;gap:1.25rem;list-style:none;margin:0;padding:0;flex-wrap:wrap;}
-.sc-nav a{color:#f4f2ee;text-decoration:none;font-size:.82rem;}
+/* masthead */
+.mast{display:flex;justify-content:space-between;align-items:center;padding:10px 22px;border-bottom:1px solid var(--bone);max-width:none}
+.mast .logo{display:block;line-height:0}
+.mast .logo img{width:64px;height:64px;display:block}
+.mast .back{font-weight:400;font-size:15px;color:var(--bone);text-decoration:none;border-bottom:1px solid var(--grey)}
 
-.mt-masthead{background:#111;border-bottom:4px solid #0ca678;padding:16px 0;}
-.mt-masthead .wrap{max-width:1100px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem;}
-.mt-masthead .brandrow{display:flex;align-items:center;gap:.6rem;}
-.mt-masthead img.sc{height:28px;}
-.mt-masthead .brandrow span{font-family:'Fraunces',serif;font-weight:600;font-size:1rem;color:#f4f2ee;}
-.mt-masthead .kicker{font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#aad9c8;}
+/* hero */
+.hero{padding:56px 0 28px}
+.presents{font:italic 400 22px var(--text);letter-spacing:.02em;color:var(--bone);margin:0 0 4px}
+h1{font:700 clamp(68px,15.5vw,150px)/.9 var(--display);margin:0;text-transform:uppercase;letter-spacing:-.01em}
+.sub{font:700 clamp(22px,4.6vw,40px)/1.1 var(--display);margin:16px 0 0;text-transform:uppercase;letter-spacing:.02em;background:var(--gold);color:var(--ink);display:inline-block;padding:6px 14px 4px}
 
-.mt-hero{max-width:1100px;margin:0 auto;padding:44px 24px 10px;display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center;}
-@media(max-width:760px){.mt-hero{grid-template-columns:1fr;padding-top:30px;}}
-.mt-hero-text .eyebrow{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#0ca678;margin:0 0 .6rem;}
-.mt-hero-text h1{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3rem);line-height:1.05;margin:0 0 .8rem;}
-.mt-hero-text p{font-size:1.02rem;color:var(--sub);line-height:1.6;margin:0;}
-.mt-hero-frame{display:flex;justify-content:center;}
-.mt-hero-frame img{width:100%;max-width:360px;border-radius:8px;box-shadow:0 20px 44px rgba(28,26,21,.22);}
+/* images */
+figure{margin:34px 0}
+.slot{position:relative;background:var(--panel)}
+.slot img{display:block;width:100%;height:auto;filter:var(--tone)}
+.slot.empty{min-height:220px;border:2px dashed #3a382f;display:flex;align-items:center;justify-content:center;color:var(--mute);font:15px var(--text)}
+.slot.empty img{display:none}
+.slot.empty::after{content:"Image goes here: " attr(data-file)}
+figcaption{font-size:15px;font-style:italic;color:var(--mute);margin-top:8px}
 
-.mt-byline{font-family:'Space Mono',monospace;font-size:.72rem;color:var(--sub);
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  padding:12px 0;margin:1.5rem auto 0;max-width:820px;display:flex;gap:1rem;flex-wrap:wrap;
-  text-transform:uppercase;letter-spacing:.04em;}
+h2{font:700 clamp(30px,6.2vw,46px)/1.05 var(--display);text-transform:uppercase;margin:58px 0 14px}
+h2::after{content:"";display:block;width:64px;height:5px;background:var(--gold);margin-top:12px}
+p{margin:0 0 1.1em;max-width:66ch}
+.lede{font-size:23px;line-height:1.5}
+sup a{text-decoration:none;font-weight:600}
 
-#mt article{padding:2.2rem 0 1rem;}
-#mt p{font-size:1.04rem;line-height:1.75;margin:0 0 1.2rem;}
-#mt .lede{font-size:1.15rem;color:#2b2820;}
-#mt h2{font-family:'Fraunces',serif;font-size:1.55rem;margin:2.4rem 0 1rem;}
+/* ledger chart */
+.ledger{background:var(--panel);padding:26px 22px 20px;margin:26px 0;border-top:5px solid var(--gold)}
+.ledger h3{font:700 22px var(--display);margin:0 0 4px}
+.ledger .note{color:var(--mute);font-size:15px;margin:0 0 18px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid #2c2a24}
+.row:last-of-type{border-bottom:0}
+.lab{font-size:15px;line-height:1.25}
+.lab b{display:block;font-weight:600}
+.track{position:relative;height:34px}
+.bar{height:100%;min-width:3px;width:var(--w);background:var(--grey);transform-origin:left;animation:grow 1.1s cubic-bezier(.2,.7,.2,1) both}
+.bar.ca{background:var(--bone)}
+.bar.top{background:repeating-linear-gradient(135deg,var(--bone) 0 9px,#b9b2a6 9px 18px)}
+.val{position:absolute;left:calc(var(--w) + 10px);top:50%;transform:translateY(-50%);font:700 18px var(--display);white-space:nowrap}
+.val.in{left:auto;right:10px;color:var(--ink)}
+.val small{font:13px var(--text);color:var(--mute);margin-left:6px;letter-spacing:0}
+.val.in small{color:#3a362f}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.key{display:flex;gap:18px;font-size:14px;color:var(--mute);margin-top:14px;flex-wrap:wrap}
+.key i{display:inline-block;width:14px;height:14px;margin-right:6px;vertical-align:-2px}
 
-.mt-break{margin:2.4rem -24px;}
-.mt-break img{width:100%;display:block;border-radius:0;}
-.mt-break figcaption{font-family:'Space Mono',monospace;font-size:.7rem;text-transform:uppercase;
-  letter-spacing:.05em;color:var(--sub);padding:.6rem 24px 0;}
+/* callout */
+.big{border:3px solid var(--gold);padding:26px 22px;margin:38px 0;text-align:center}
+.big .n{font:700 clamp(50px,11vw,92px)/1 var(--display);color:var(--bone)}
+.big p{margin:6px auto 0;color:var(--bone)}
 
-/* bar chart */
-.ladder{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.6rem 1.8rem;margin:1.6rem 0;}
-.ladder-row{margin-bottom:1.1rem;}
-.ladder-row:last-child{margin-bottom:0;}
-.ladder-label{display:flex;justify-content:space-between;font-size:.86rem;margin-bottom:.3rem;}
-.ladder-label .role{font-weight:600;}
-.ladder-label .val{font-family:'Space Mono',monospace;color:var(--sub);}
-.ladder-track{background:#f1ebd9;border-radius:5px;height:14px;overflow:hidden;}
-.ladder-fill{height:100%;border-radius:5px;}
-#mt .ladder-note{font-size:.78rem;line-height:1.6;color:var(--sub);margin:1.2rem 0 0;padding-top:1rem;border-top:1px dashed var(--line);}
+/* pay tiers (text version of the chart, for readers who prefer figures) */
+.tiers{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:22px 0}
+.tier{background:var(--panel);padding:18px}
+.tier h3{font:700 21px var(--display);margin:0 0 10px;color:var(--bone);border-bottom:1px solid var(--grey);padding-bottom:8px}
+.tier dl{margin:0}
+.tier dt{font-size:15px;color:var(--mute);margin-top:10px}
+.tier dd{margin:0;font:700 24px var(--display)}
 
-/* tables */
-.mt-table-wrap{overflow-x:auto;margin:1.6rem 0;border:1px solid var(--line);border-radius:10px;}
-table.mt-table{border-collapse:collapse;width:100%;min-width:460px;background:var(--card);font-size:.92rem;}
-table.mt-table thead th{background:#111;color:#f4f2ee;text-align:left;padding:.75rem 1rem;
-  font-family:'Space Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;}
-table.mt-table td{padding:.7rem 1rem;border-top:1px solid var(--line);}
-table.mt-table tbody tr:nth-child(even){background:#fbf8f0;}
-table.mt-table td.num{font-family:'Space Mono',monospace;}
+/* roadmap */
+.road{list-style:none;margin:26px 0;padding:0;position:relative}
+.road::before{content:"";position:absolute;left:21px;top:8px;bottom:8px;width:4px;background:var(--gold)}
+.road li{position:relative;padding:0 0 26px 64px}
+.road li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:46px;height:46px;background:var(--ink);border:4px solid var(--gold);border-radius:50%;font:700 21px/38px var(--display);text-align:center}
+.road{counter-reset:s}
+.road h3{font:700 23px/1.15 var(--display);margin:0 0 2px}
+.road .when{color:var(--gold);font-size:15px;font-weight:600}
+.road p{margin:4px 0 0;font-size:17.5px;line-height:1.55}
 
-.stat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.6rem 0;}
-@media(max-width:600px){.stat-cards{grid-template-columns:1fr;}}
-.stat-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.2rem;text-align:center;}
-.stat-card .big{font-family:'Fraunces',serif;font-size:1.6rem;color:#0ca678;}
-.stat-card .lbl{font-size:.76rem;color:var(--sub);text-transform:uppercase;letter-spacing:.04em;margin-top:.3rem;}
+.others{background:var(--panel);padding:22px;margin:24px 0}
+.others h3{font:700 22px var(--display);margin:0 0 10px}
+.others ul{margin:0;padding-left:20px}
+.others li{margin-bottom:8px;font-size:17.5px}
 
-.mt-callout{background:#111;color:#f4f2ee;border-radius:10px;padding:1.6rem 1.8rem;margin:2rem 0;}
-.mt-callout h3{font-family:'Fraunces',serif;margin:0 0 .6rem;color:#aad9c8;font-size:1.15rem;}
-.mt-callout p{color:#e4e0d4;margin:0;font-size:.95rem;}
+.foot{border-top:1px solid #2c2a24;margin-top:60px;padding:26px 0 70px;font-size:15px;color:var(--mute)}
+.foot .mark{display:block;width:96px;height:96px;margin:0 auto 22px}
+.foot ol{padding-left:20px;margin:0 0 14px}
 
-.mt-sources{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.6rem 1.8rem;margin:2.4rem 0 1rem;}
-.mt-sources h2{margin-top:0;}
-.mt-sources ol{margin:0;padding-left:1.2rem;font-size:.86rem;color:var(--sub);line-height:1.9;}
-.mt-sources a{color:#0ca678;}
-
-.sc-footer{background:#111;padding:2rem 0;}
-.sc-footer .wrap{max-width:1100px;display:flex;justify-content:center;gap:1.4rem;flex-wrap:wrap;}
-.sc-footer a{color:#f4f2ee;text-decoration:none;font-size:.8rem;}
+@media (max-width:620px){
+  body{font-size:18px}
+  .row{grid-template-columns:1fr;gap:4px}
+  .tiers{grid-template-columns:1fr}
+  .lab b{display:inline;margin-right:6px}
+}
+@media (prefers-reduced-motion:reduce){.bar{animation:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
-<a href="#main" style="position:absolute;left:-9999px;">Skip to content</a>
-<nav class="sc-nav">
-<div class="wrap">
-<a class="brand" href="index.html"><img src="logo.svg" alt="Sub Culture"></a>
-<ul>
-<li><a href="index.html">Articles</a></li>
-<li><a href="photography.html">Photo &amp; Video</a></li>
-<li><a href="downloads.html">Downloads</a></li>
-<li><a href="trivia.html">Daily Trivia</a></li>
-<li><a href="media-kit.html">Collaborate</a></li>
-<li><a href="index.html#live-scores">Live Scores</a></li>
-</ul>
-</div>
-</nav>
+<header class="mast">
+  <a class="logo" href="https://lmaxsub.github.io/Sub-Culture-Media/" aria-label="Sub Culture home"><img src="sc-logo.png" alt="Sub Culture"></a>
+  <a class="back" href="https://lmaxsub.github.io/Sub-Culture-Media/">Back to all articles</a>
+</header>
 
-<div id="mt">
+<main class="wrap">
 
-<div class="mt-masthead">
-<div class="wrap">
-<div class="brandrow">
-<img class="sc" src="sc-logo.png" alt="Sub Culture logo">
-<span>Sub Culture</span>
-</div>
-<span class="kicker">Money Talk &mdash; Careers &amp; Pay</span>
-</div>
-</div>
+<section class="hero">
+  <p class="presents">Sub Culture presents</p>
+  <h1>Money Talk</h1>
+  <p class="sub">The account of accountants</p>
 
-<main id="main">
+  <figure class="slot" data-file="accountants-hero.jpg">
+    <img src="accountants-hero.jpg" alt="An accountant’s hands writing on financial reports, beside a phone calculator, cash and a laptop" onerror="this.parentNode.classList.add('empty')">
+    <figcaption>Keeping, inspecting and analysing financial records is the job.</figcaption>
+  </figure>
 
-<div class="mt-hero">
-<div class="mt-hero-text">
-<p class="eyebrow">Money Talk</p>
-<h1>What Accountants Actually Earn in SA</h1>
-<p>From newly qualified CA(SA) to multi-million-rand CFO &mdash; the numbers behind the calculator, sourced, with their limits flagged.</p>
-</div>
-<div class="mt-hero-frame">
-<img src="acct-hero.jpg" alt="Two colleagues reviewing a financial statement together at a desk with a laptop and calculator">
-</div>
-</div>
+  <p class="lede">An accountant is someone whose job is to keep, inspect and analyse financial records. Within the profession, a distinction exists between general and chartered accountants.</p>
+  <p>General accountants typically hold a university degree in accounting or finance. Chartered accountants must, in addition, complete professional exams, gain practical experience and maintain membership of a recognised professional body.<sup><a href="#n1">1</a></sup></p>
+</section>
 
-<div class="mt-byline">
-<span>Money Talk</span>
-<span>&bull;</span>
-<span>7 min read</span>
-<span>&bull;</span>
-<span>Careers &amp; Pay</span>
+<h2>The pay, side by side</h2>
+<p>Here is every tier on the same scale. The gap between a general accountant and a chartered one is the whole story of this article.</p>
+
+<div class="ledger" role="img" aria-label="Bar chart of average annual base pay: general accountants from R260 000 to R477 000, chartered accountants from R420 000 to R1 200 000, top chartered accountants R2 400 000.">
+  <h3>Average base pay per year</h3>
+  <p class="note">Rand, 2026 estimates. Monthly figures are rounded.</p>
+
+  <div class="row"><div class="lab"><b>Early-career</b>General</div>
+    <div class="track"><div class="bar" style="--w:10.8%"></div><span class="val" style="--w:10.8%">R260 000<small>~R21 700 a month</small></span></div></div>
+  <div class="row"><div class="lab"><b>Experienced</b>General</div>
+    <div class="track"><div class="bar" style="--w:14.4%"></div><span class="val" style="--w:14.4%">R346 000<small>~R28 800 a month</small></span></div></div>
+  <div class="row"><div class="lab"><b>Senior</b>General</div>
+    <div class="track"><div class="bar" style="--w:19.9%"></div><span class="val" style="--w:19.9%">R477 000<small>~R39 800 a month</small></span></div></div>
+  <div class="row"><div class="lab"><b>Entry-level</b>Chartered</div>
+    <div class="track"><div class="bar ca" style="--w:17.5%"></div><span class="val" style="--w:17.5%">R420 000<small>~R35 000 a month</small></span></div></div>
+  <div class="row"><div class="lab"><b>Mid-level</b>Chartered</div>
+    <div class="track"><div class="bar ca" style="--w:30%"></div><span class="val" style="--w:30%">R720 000<small>~R60 000 a month</small></span></div></div>
+  <div class="row"><div class="lab"><b>Senior</b>Chartered</div>
+    <div class="track"><div class="bar ca" style="--w:50%"></div><span class="val" style="--w:50%">R1 200 000<small>~R100 000 a month</small></span></div></div>
+  <div class="row"><div class="lab"><b>Top tier</b>Chartered</div>
+    <div class="track"><div class="bar top" style="--w:100%"></div><span class="val in" style="--w:100%">R2 400 000<small>R200 000 a month</small></span></div></div>
+
+  <div class="key"><span><i style="background:var(--bone)"></i>General accountants</span><span><i style="background:var(--gold)"></i>Chartered accountants</span></div>
 </div>
 
-<article class="wrap">
+<h2>The pay of general accountants</h2>
+<div class="tiers">
+  <div class="tier">
+    <h3>General accountants</h3>
+    <dl>
+      <dt>Early-career</dt><dd>R260 000 a year</dd>
+      <dt>Experienced</dt><dd>R346 000 a year</dd>
+      <dt>Senior</dt><dd>R477 000 a year</dd>
+    </dl>
+  </div>
+  <div class="tier">
+    <h3>Chartered accountants</h3>
+    <dl>
+      <dt>Entry-level</dt><dd>R420 000 a year</dd>
+      <dt>Mid-level</dt><dd>R720 000 a year</dd>
+      <dt>Senior</dt><dd>R1 200 000 a year</dd>
+    </dl>
+  </div>
+</div>
+<p>All figures are average base salaries. Early-career general accountants can start well below the average, and the gap closes quickly once a chartered accountant qualifies.</p>
 
-<p class="lede">Everyone assumes accountants are quietly rich. The truth is more interesting: a profession with a steep ladder, a very high ceiling, and salary data that is far messier than any spreadsheet would like you to believe.</p>
-
-<p>We pulled figures from a recruitment benchmark, a salary aggregator and employer-reported government pay to map what accountants earn in South Africa and how the public sector compares. Every number below is attributed to its source in the list at the bottom, and where the data is thin or contradicts itself, we say so rather than smoothing it over.</p>
-
-<h2>The Ladder: Newly Qualified to CFO</h2>
-<p>This is the private-sector climb, from a newly qualified CA(SA) to Chief Financial Officer of a large corporate. Bars are scaled so the lower rungs stay visible instead of being flattened by the top. The jump between the first bar and the last is the whole story of the profession.</p>
-
-<div class="ladder">
-
-<div class="ladder-row">
-<div class="ladder-label"><span class="role">Newly Qualified CA(SA)</span><span class="val">R620K&ndash;R720K /yr</span></div>
-<div class="ladder-track"><div class="ladder-fill" style="width:41%;background:#0ca678;"></div></div>
+<div class="big">
+  <div class="n">R200 000</div>
+  <p>a month, or R2 400 000 a year, for the top tier of chartered accountants.</p>
 </div>
 
-<div class="ladder-row">
-<div class="ladder-label"><span class="role">Finance Manager (non-CA)</span><span class="val">R650K&ndash;R900K /yr</span></div>
-<div class="ladder-track"><div class="ladder-fill" style="width:44%;background:#1098ad;"></div></div>
-</div>
+<h2>The pay of chartered accountants</h2>
+<p>An entry-level chartered accountant averages R420 000 a year, which already sits above what many experienced general accountants earn. By mid-level that climbs to R720 000, and senior chartered accountants average R1 200 000. Above them is the top tier, where earnings reach R200 000 a month.</p>
+<p>There is a catch. The money comes at the end of a long road, and the road itself pays little. Trainees in some 2026 listings were offered roughly R15 000 to R19 000 a month while studying and writing exams.</p>
 
-<div class="ladder-row">
-<div class="ladder-label"><span class="role">Finance Manager (CA(SA))</span><span class="val">R900K&ndash;R1.35M /yr</span></div>
-<div class="ladder-track"><div class="ladder-fill" style="width:53%;background:#4263eb;"></div></div>
-</div>
-
-<div class="ladder-row">
-<div class="ladder-label"><span class="role">Senior Finance Manager</span><span class="val">R1.3M&ndash;R1.9M /yr</span></div>
-<div class="ladder-track"><div class="ladder-fill" style="width:63%;background:#7048e8;"></div></div>
-</div>
-
-<div class="ladder-row">
-<div class="ladder-label"><span class="role">Head of Finance</span><span class="val">R1.6M&ndash;R2.3M /yr</span></div>
-<div class="ladder-track"><div class="ladder-fill" style="width:70%;background:#ae3ec9;"></div></div>
-</div>
-
-<div class="ladder-row">
-<div class="ladder-label"><span class="role">Finance Director (Large Corporate)</span><span class="val">R2.5M&ndash;R3.5M /yr</span></div>
-<div class="ladder-track"><div class="ladder-fill" style="width:87%;background:#e64980;"></div></div>
-</div>
-
-<div class="ladder-row">
-<div class="ladder-label"><span class="role">CFO (JSE / Large Corporate)</span><span class="val">R3.0M&ndash;R5.0M+ /yr</span></div>
-<div class="ladder-track"><div class="ladder-fill" style="width:100%;background:#d6336c;"></div></div>
-</div>
-
-<p class="ladder-note">Source: Blue Recruiting, South Africa Finance Salary Benchmarks 2025/26. Bands are annual cost-to-company ranges from a corporate recruiter's placements; they vary by city, firm size and sector, so treat them as a map, not a guarantee. We have not charted pay during SAICA articles, because we could not verify a reliable published figure.</p>
-</div>
-
-<p>Blue Recruiting also notes that a CA(SA) with seven to ten years of post-qualifying experience earns more than double the starting package. The designation is the entry ticket, and experience is what moves you up the bars.</p>
-
-<figure class="mt-break">
-<img src="acct-flatlay.jpg" alt="Desk flatlay with a typewriter, invoice and tax documents, cash and coins">
-<figcaption>The paperwork doesn't change. The paycheque attached to doing it does.</figcaption>
+<figure class="slot" data-file="accountants-2.jpg">
+  <img src="accountants-2.jpg" alt="Two accountants working side by side at a desk with a calculator and laptop" onerror="this.parentNode.classList.add('empty')">
+  <figcaption>Years of long desk hours come before the big salary.</figcaption>
 </figure>
 
-<h2>Public Sector vs Private Sector</h2>
-<p>This is where the data stops agreeing with itself, so here are both sides. One salary aggregator says public-sector accountants out-earn private ones:</p>
+<h2>How to become a Chartered Accountant in South Africa</h2>
+<p>The CA(SA) route is run by the South African Institute of Chartered Accountants (SAICA). It takes about seven years in total, and every step is gated by study or exams.</p>
 
-<div class="stat-cards">
-<div class="stat-card"><div class="big">R386,400</div><div class="lbl">Public sector average</div></div>
-<div class="stat-card"><div class="big">R361,500</div><div class="lbl">Private sector average</div></div>
-<div class="stat-card"><div class="big">+7%</div><div class="lbl">Claimed public premium</div></div>
-</div>
-<p style="font-size:.82rem;color:var(--sub);margin-top:-.6rem;">Source: WorldSalaries, Average Accountant Salary in South Africa. Caution: the same page puts the overall average accountant salary at R283,400, which is below <em>both</em> sector figures. That cannot be true if the two sectors make up the whole, so treat the +7% as a rough signal at best.</p>
-
-<p>Now look at what government employers actually report for specific titles. Every figure below rests on a handful of salaries, so the sample size is shown:</p>
-
-<div class="mt-table-wrap">
-<table class="mt-table">
-<thead>
-<tr><th>Role (Government of South Africa)</th><th>Average</th><th>Based on</th></tr>
-</thead>
-<tbody>
-<tr><td>Accounting Clerk</td><td class="num">R176,310 /yr</td><td class="num">3 salaries</td></tr>
-<tr><td>Accountant</td><td class="num">R211,713 /yr</td><td class="num">2 job ads (estimate)</td></tr>
-<tr><td>Internal Auditor</td><td class="num">R277,359 /yr</td><td class="num">2 salaries</td></tr>
-<tr><td>Senior Accountant</td><td class="num">R327,941 /yr</td><td class="num">3 salaries</td></tr>
-<tr><td>Senior Internal Auditor</td><td class="num">R340,002 /yr</td><td class="num">2 salaries</td></tr>
-<tr><td>Senior Auditor</td><td class="num">R347,909 /yr</td><td class="num">5 salaries</td></tr>
-<tr><td>Auditor</td><td class="num">R526,168 /yr</td><td class="num">2 salaries</td></tr>
-</tbody>
-</table>
-</div>
-<p style="font-size:.82rem;color:var(--sub);margin-top:-.6rem;">Source: Indeed, salaries at Government of South Africa, collected from employees and job postings. Note the oddity: "Auditor" (2 salaries) outranks "Senior Auditor" (5 salaries), which shows how much a tiny sample can distort an average.</p>
-
-<p>Set a few of those next to private-sector placement data and the picture flips:</p>
-
-<div class="mt-table-wrap">
-<table class="mt-table">
-<thead>
-<tr><th>Role</th><th>Government (Indeed)</th><th>Private (Blue Recruiting)</th></tr>
-</thead>
-<tbody>
-<tr><td>Accountant</td><td class="num">R211,713</td><td class="num">R380K&ndash;R500K (2&ndash;5 yrs experience)</td></tr>
-<tr><td>Senior Internal Auditor</td><td class="num">R340,002</td><td class="num">R600K&ndash;R900K</td></tr>
-</tbody>
-</table>
-</div>
-<p style="font-size:.82rem;color:var(--sub);margin-top:-.6rem;">The government figures have no stated experience level and tiny samples; the private bands are cost-to-company from a recruiter's placements. These are different methods, so the gap is indicative, not exact.</p>
-
-<div class="mt-callout">
-<h3>So who pays more?</h3>
-<p>Honestly, the evidence is mixed. One aggregate says public wins narrowly, but it contradicts its own overall average. Role-by-role, government-reported pay runs well below private placement bands, but on very thin data. What no salary table captures is the rest of the package: pension, job security and predictable hours. If cash is your only metric, the private sector has the higher ceiling by a long way. If it isn't, government work is a defensible choice, and we'd be wary of anyone who tells you the numbers settle it.</p>
-</div>
-
-<div class="mt-sources">
-<h2>Sources</h2>
-<ol>
-<li>Blue Recruiting &mdash; <a href="https://bluerecruiting.co.za/insights/sa-finance-salary-benchmarks-2026" target="_blank" rel="noopener">South Africa Finance Salary Benchmarks 2025/26</a></li>
-<li>WorldSalaries &mdash; <a href="https://worldsalaries.com/average-accountant-salary-in-south-africa/" target="_blank" rel="noopener">Average Accountant Salary in South Africa for 2026</a></li>
-<li>Indeed &mdash; <a href="https://za.indeed.com/cmp/Government-of-South-Africa/salaries/Accountant" target="_blank" rel="noopener">Accountant salaries at Government of South Africa</a></li>
+<ol class="road">
+  <li><h3>Finish matric with the right marks</h3><span class="when">School</span>
+    <p>You need a bachelor’s degree pass, with Maths and English both at level 5.</p></li>
+  <li><h3>Earn an accredited degree</h3><span class="when">About 3 years</span>
+    <p>Study a BCom in Accounting at a SAICA-accredited university. Not every accounting degree qualifies, so check the accreditation list before you apply.</p></li>
+  <li><h3>Complete the CTA</h3><span class="when">About 1 year</span>
+    <p>The Certificate in the Theory of Accounting is a postgraduate programme, sometimes offered as a postgraduate diploma. It qualifies you to write the first board exam.</p></li>
+  <li><h3>Sign a training contract</h3><span class="when">3 years</span>
+    <p>This is “articles”. You work at a SAICA-accredited training office, usually a Big Four firm (Deloitte, EY, KPMG or PwC), a mid-tier firm, or an approved company or public body. Studying part-time? The contract runs five years instead.</p></li>
+  <li><h3>Pass two board exams</h3><span class="when">During training</span>
+    <p>First comes the Initial Assessment of Competence, which was called the ITC until recently. After at least 20 months of training you can write the Assessment of Professional Competence (APC), the final exam.</p></li>
+  <li><h3>Register as a CA(SA)</h3><span class="when">The finish line</span>
+    <p>Once you have passed both exams and completed your contract, you apply to SAICA. You then keep your membership by meeting its continuing professional development requirements.</p></li>
 </ol>
+
+<div class="others">
+  <h3>Not the only road</h3>
+  <ul>
+    <li><b>AGA(SA):</b> SAICA’s Associate General Accountant designation gives professional recognition without the audit-focused training contract and board exams.</li>
+    <li><b>PA(SA):</b> awarded by the South African Institute of Professional Accountants (SAIPA).</li>
+    <li><b>ACCA and CIMA:</b> international designations, both active in South Africa.</li>
+    <li><b>Tax practitioners:</b> SARS only registers tax practitioners who belong to an approved professional body, such as SAICA, SAIPA or SAIT.</li>
+  </ul>
 </div>
 
-<figure class="mt-break">
-<img src="acct-calculator.jpg" alt="Close-up of a woman using a calculator while reviewing a notebook at her desk">
-<figcaption>Every number above started life exactly like this &mdash; one calculation at a time.</figcaption>
+<figure class="slot" data-file="accountants-3.jpg">
+  <img src="accountants-3.jpg" alt="Black and white photo of two people working through accounting reports with a calculator" onerror="this.parentNode.classList.add('empty')">
+  <figcaption>The pay is the reward. The exams are the price.</figcaption>
 </figure>
 
-<h2>The Bottom Line</h2>
-<p>Accounting isn't the overnight money story people assume it is &mdash; it's a long game with a genuinely brutal opening stretch. But the back half of that game, provided you push through to the CA(SA) designation and into the private sector's upper management, pays out better than almost any other career path available in South Africa without founding your own company. The spreadsheet, it turns out, eventually balances in your favour.</p>
-
-</article>
-</main>
-</div>
-
-<footer class="sc-footer">
-<div class="wrap">
-<a href="index.html">Articles</a>
-<a href="photography.html">Photo &amp; Video</a>
-<a href="downloads.html">Downloads</a>
-<a href="trivia.html">Daily Trivia</a>
-<a href="media-kit.html">Collaborate</a>
-<a href="index.html#live-scores">Live Scores</a>
-<a href="https://instagram.com/subxculturex" target="_blank" rel="noopener">Instagram</a>
-<a href="https://tiktok.com/@subxculturex" target="_blank" rel="noopener">TikTok</a>
-</div>
+<footer class="foot">
+  <img class="mark" src="sc-logo.png" alt="Sub Culture">
+  <ol>
+    <li id="n1">The two main accountancy bodies in South Africa are SAICA, which awards the CA(SA), and SAIPA, which awards the PA(SA).</li>
+  </ol>
+  <p>Salary figures are 2026 estimates compiled from salary aggregators such as PayScale and Ourpower. They are indicative averages, not guarantees, and vary with employer, city and skills. Qualification details come from SAICA and its accredited training offices; check saica.org.za for the latest requirements.</p>
 </footer>
 
-<script src="script.js"></script>
-<script data-goatcounter="https://subculture.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<script src="player.js"></script>
-<script src="chatbot-widget.js"></script>
+</main>
 </body>
 </html>
